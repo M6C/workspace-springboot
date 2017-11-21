@@ -1,0 +1,93 @@
+<ROOT>
+    <APPLICATIONS>
+        <APPLICATION Name="Root">
+            <PATHS>
+            	<PATH Name="Main">/tmp</PATH>
+                <PATH Name="Class"></PATH>
+                <PATH Name="Jar"></PATH>
+            </PATHS>
+        </APPLICATION>
+        <APPLICATION Name="Library">
+            <PATHS>
+                <PATH Name="Main">[Root]/Library</PATH>
+                <PATH Name="Class"></PATH>
+                <PATH Name="Jar"></PATH>
+            </PATHS>
+        </APPLICATION>
+        <APPLICATION Name="Test">
+            <PATHS>
+                <PATH Name="Main">[Root]/Test</PATH>
+                <PATH Name="Source">/src</PATH>
+                <PATH Name="Class">/bin</PATH>
+            </PATHS>
+            <PACKAGING>
+                <PACKAGE Type="Jar" Name="Default" Filename="/Test.jar">
+                    <CONTENT From="/bin" To=""/>
+                </PACKAGE>
+            </PACKAGING>
+            <BUILD>
+                <CLASSPATH Type="Application">Library</CLASSPATH>
+            </BUILD>
+            <JDK Name="jdk1.8.0_11"/>
+        </APPLICATION>
+    </APPLICATIONS>
+    <JDKS>
+      <JDK Name="jdk1.8.0_11">
+        <PATH Name="Home">C:\Program Files\Java\jdk1.8.0_101</PATH>
+        <JRE>
+          <PATH Name="Home">jre</PATH>
+          <PATH Name="Lib">lib</PATH>
+        </JRE>
+      </JDK>
+    </JDKS>
+    <SERVERS>
+       <SERVER Name="JBoss 4.0.5 Dev" Type="WebApplication">
+            <PATHS>
+                <PATH Name="RootDeploy">
+                    /jboss-4.0.5.GA/server/dev/deploy
+                </PATH>
+            </PATHS>
+            <COMMANDS>
+                <COMMAND Name="Deploy">
+                    <![CDATA[http://localhost:8380/jmx-console/HtmlAdaptor?action=invokeOpByName&name=jboss.system:service%3DMainDeployer&methodName=deploy&argType=java.net.URL&arg0=]]>
+                </COMMAND>
+                <COMMAND Name="Redeploy">
+                    <![CDATA[http://localhost:8380/jmx-console/HtmlAdaptor?action=invokeOpByName&name=jboss.system:service%3DMainDeployer&methodName=redeploy&argType=java.net.URL&arg0=]]>
+                </COMMAND>
+                <COMMAND Name="Undeploy">
+                    <![CDATA[http://localhost:8380/jmx-console/HtmlAdaptor?action=invokeOpByName&name=jboss.system:service%3DMainDeployer&methodName=undeploy&argType=java.net.URL&arg0=]]>
+                </COMMAND>
+            </COMMANDS>
+        </SERVER>
+        <SERVER Name="GlassFish 4.1.1 Dev" Type="WebApplication">
+            <PATHS>
+                <PATH Name="RootDeploy">
+                    /glassfish-4.1.1/glassfish/domains/domain1
+                </PATH>
+            </PATHS>
+            <COMMANDS>
+                <COMMAND Name="AutoDeploy">
+                    /eclipseApps/Test
+                </COMMAND>
+            </COMMANDS>
+        </SERVER>
+    </SERVERS>
+    <PROFILES>
+        <PROFILE Name="Admin">
+            <APPLICATIONS>
+	            <APPLICATION Name="Root"/>
+                <APPLICATION Name="Library"/>
+	            <APPLICATION Name="Test"/>
+            </APPLICATIONS>
+        </PROFILE>
+    </PROFILES>
+    <USERS>
+        <USER Name="Admin">
+            <LOGIN>admin</LOGIN>
+            <PASSWORD>pwd</PASSWORD>
+            <PROFILES>
+                <PROFILE Name="Admin"/>
+            </PROFILES>
+        </USER>
+    </USERS>
+</ROOT>

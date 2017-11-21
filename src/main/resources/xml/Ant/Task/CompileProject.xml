@@ -1,0 +1,15 @@
+<project name="CompileProject" default="compile" basedir=".">
+    <target name="compile">
+    	<echo message="Ant project:CompileProject target:compile java.src:${java.src} java.cls:${java.cls} class.path:${class.path}"/>
+    	<javac	srcdir="${java.src}"
+				destdir="${java.cls}"
+    			includeantruntime="true"
+				deprecation="off"
+    			nowarn="on"
+    	>
+	 	    <classpath>
+	    	   <pathelement path="${class.path}/"/>
+	    	</classpath>
+    	</javac>
+    </target>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<localRepository>c:/DevJ2EE/.m2/repository</localRepository>
+	<proxies>
+		<proxy>
+			<id>laposte-proxy</id>
+			<active>true</active>
+			<protocol>http</protocol>
+			<host>web.pandore.log.intra.laposte.fr</host>
+			<port>8080</port>
+			<username>pckh146</username>
+			<password>k5F+n7S!</password>
+			<nonProxyHosts>www.google.com|localhost|127.0.0.1</nonProxyHosts>
+		</proxy>
+	</proxies>
+</settings>
