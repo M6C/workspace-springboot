@@ -35,6 +35,43 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+
+		<!-- org.cameleon FrameWork 1.0 -->
+		<dependency>
+			<groupId>org.cameleon</groupId>
+			<artifactId>FrameWork</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/FrameWork.jar</systemPath>
+		</dependency>
+
+		<!-- org.cameleon FrameWork_TagLib 1.0 -->
+		<dependency>
+			<groupId>org.cameleon</groupId>
+			<artifactId>FrameWork_TagLib</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/FrameWork_TagLib.jar</systemPath>
+		</dependency>
+
+		<!-- org.cameleon FrameWork_Trace 1.0 -->
+		<dependency>
+			<groupId>org.cameleon</groupId>
+			<artifactId>FrameWork_Trace</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/FrameWork_Trace.jar</systemPath>
+		</dependency>
+
+		<!-- org.cameleon FrameWork_Util 1.0 -->
+		<dependency>
+			<groupId>org.cameleon</groupId>
+			<artifactId>FrameWork_Util</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/FrameWork_Util.jar</systemPath>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
