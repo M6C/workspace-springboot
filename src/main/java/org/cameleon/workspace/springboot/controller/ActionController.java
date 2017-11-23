@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -61,10 +62,11 @@ public class ActionController {
         this.initWorkspace();;
 	}
 
-	@RequestMapping("/action.servlet")
-    @ResponseBody
+//	@RequestMapping("/action.servlet")
+//    @ResponseBody
+	@GetMapping("/")
     public String action(HttpServletRequest request, HttpServletResponse response, String event) throws ServletException, IOException {
-
+/*
         final StringBuilder ret = new StringBuilder("Hello World! ").append(event);
         File file = new File(getClass().getResource("/xml").getFile());
         File[] files = file.listFiles();
@@ -72,10 +74,10 @@ public class ActionController {
         Arrays.stream(files).forEach((p) -> {
             ret.append("\r\n" + p.getName());
         });
-        
-        process(request, response, event);
 
         return ret.toString();
+*/
+        return process(request, response, event);
     }
 
 	// SPRINGBOOT
@@ -102,11 +104,6 @@ public class ActionController {
 			try {WORKSPACE_SECURITY_XML = new File(szSecurityXml).getCanonicalPath();}catch (Exception ex){ex.printStackTrace();}
 		}
 	}
-    
-	// SPRINGBOOT
-    protected RequestDispatcher doReditect(HttpServletRequest request, String redirect) {
-        return request.getRequestDispatcher(redirect);
-    }
 
     // SPRINGBOOT
     protected String getResource(String name) {
@@ -121,7 +118,7 @@ public class ActionController {
     }
 
     // SPRINGBOOT
-    protected void process(HttpServletRequest request, HttpServletResponse response, String szEvent) throws ServletException, IOException {
+    protected String process(HttpServletRequest request, HttpServletResponse response, String szEvent) throws ServletException, IOException {
         String redirect = null;
         if (szEvent != null) {
             BeanServlet bean = FrmWrkServlet.get(szEvent);
@@ -152,18 +149,7 @@ public class ActionController {
                             redirect = bean.getForwardTargetError(request);
                         }
 
-                        if (UtilString.isNotEmpty(redirect)) {
-                            // SPRINGBOOT
-                            RequestDispatcher rd = doReditect(request, redirect);
-                            if (rd != null) {
-                                Trace.DEBUG(this, "Redirect to : '" + redirect + "'");
-                                rd.forward(request, response);
-                            } else {
-                                Trace.DEBUG(this, "Redirect : '" + redirect + "' not found");
-                            }
-                        } else {
-                            Trace.DEBUG(this, "No redirection");
-                        }
+						redirect(request, response, redirect);
                     } else {
                         Trace.DEBUG(this, "Don't redirect, target all ready commited: '" + redirect + "'");
                     }
@@ -173,8 +159,23 @@ public class ActionController {
                 Trace.ERROR(this, "event: '" + szEvent + "' not found");
             }
         }
-
+		return redirect;
     }
+
+	protected void redirect(HttpServletRequest request, HttpServletResponse response, String redirect) throws ServletException, IOException {
+		if (UtilString.isNotEmpty(redirect)) {
+			// SPRINGBOOT
+			RequestDispatcher rd = request.getRequestDispatcher(redirect);
+ 			if (rd != null) {
+				Trace.DEBUG(this, "Redirect to : '" + redirect + "'");
+				rd.forward(request, response);
+			} else {
+				Trace.DEBUG(this, "Redirect : '" + redirect + "' not found");
+			}
+		} else {
+			Trace.DEBUG(this, "No redirection");
+		}
+	}
 
     protected void showRequest(HttpServletRequest request) {
         StringBuffer sbAttr = new StringBuffer("REQUEST ATTRIBUTES:");
