@@ -20,9 +20,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import framework.ressource.FrmWrkConfig;
 import framework.ressource.FrmWrkServlet;
@@ -62,21 +60,8 @@ public class ActionController {
         this.initWorkspace();;
 	}
 
-//	@RequestMapping("/action.servlet")
-//    @ResponseBody
-	@GetMapping("/")
+	@RequestMapping("/action.servlet")
     public String action(HttpServletRequest request, HttpServletResponse response, String event) throws ServletException, IOException {
-/*
-        final StringBuilder ret = new StringBuilder("Hello World! ").append(event);
-        File file = new File(getClass().getResource("/xml").getFile());
-        File[] files = file.listFiles();
-
-        Arrays.stream(files).forEach((p) -> {
-            ret.append("\r\n" + p.getName());
-        });
-
-        return ret.toString();
-*/
         return process(request, response, event);
     }
 
