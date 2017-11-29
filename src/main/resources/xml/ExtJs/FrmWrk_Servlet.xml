@@ -22,7 +22,7 @@
     <SERVLET Name="Home" Target="/Web/Page/home.jsp"/>
     <SERVLET Name="HomePopup" Target="/Web/Page/home_popup.jsp"/>
     <SERVLET Name="IndexLoginValider" Target="/Web/Page/home_popup.jsp" TargetError="/Web/Page/index.jsp" Authentification="false">
-        <BEAN Name="BeanAuthentification" Scope="request" Service="workspace.service.SrvIndexLoginValider">
+        <BEAN Name="BeanAuthentification" Scope="request" Service="org.cameleon.workspace.springboot.service.SrvIndexLoginValider">
             <PARAM Name="login" Type="STRING"/>
             <PARAM Name="password" Type="STRING"/>
         </BEAN>

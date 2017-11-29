@@ -8,6 +8,8 @@ package workspace.service;
 
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,12 +24,12 @@ import javax.xml.transform.stream.StreamSource;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
-import framework.action.ActionServlet;
 import framework.beandata.BeanGenerique;
 import framework.ressource.util.UtilString;
 import framework.ressource.util.UtilXML;
 import framework.service.SrvGenerique;
 import framework.trace.Trace;
+import workspace.action.ActionServlet;
 
 /**
  * @author rocada
@@ -83,21 +85,23 @@ public class SrvIndexLoginValider extends SrvGenerique {
 		Trace.DEBUG(this, "password:"+password);
 		if (UtilString.isNotEmpty(login)&&
 			UtilString.isNotEmpty(password)) {
+			String workspaceSecutiryXsl = getWorkspaceSecutiryXsl();
+			String workspaceSecurityXml = getWorkspaceSecurityXml();
 			try {
 				//TransformerFactory tFactory = TransformerFactory.newInstance();
 				TransformerFactory tFactory = TransformerFactory.newInstance(
 					"org.apache.xalan.processor.TransformerFactoryImpl",
 					Thread.currentThread().getContextClassLoader()); 
 				//TRACE
-				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XSL:"+ActionServlet.WORKSPACE_SECURITY_XSL);
-				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XML:"+ActionServlet.WORKSPACE_SECURITY_XML);
-				Source xslSource = new StreamSource(new java.net.URL("file", "", ActionServlet.WORKSPACE_SECURITY_XSL).openStream());
-				Source xmlSource = new StreamSource(new java.net.URL("file", "", ActionServlet.WORKSPACE_SECURITY_XML).openStream());
+				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XSL:"+workspaceSecutiryXsl);
+				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XML:"+workspaceSecurityXml);
+				Source xslSource = new StreamSource(getResource(workspaceSecutiryXsl).openStream());
+				Source xmlSource = new StreamSource(getResource(workspaceSecurityXml).openStream());
 				//TRACE
 				Trace.DEBUG(this, "xslSource 1:"+xslSource);
 				Trace.DEBUG(this, "xmlSource 1:"+xmlSource);
 				if (xslSource==null) {
-					xslSource = new StreamSource(request.getSession().getServletContext().getResourceAsStream(ActionServlet.WORKSPACE_SECURITY_XSL));
+					xslSource = new StreamSource(request.getSession().getServletContext().getResourceAsStream(workspaceSecutiryXsl));
 					//TRACE
 					Trace.DEBUG(this, "xslSource 2:"+xslSource);
 				}
@@ -113,7 +117,7 @@ public class SrvIndexLoginValider extends SrvGenerique {
 					Trace.DEBUG(this, "strWriterXsl.toString():"+strWriterXsl.toString());
 				*/}
 				if (xmlSource==null) {
-					xmlSource = new StreamSource(request.getSession().getServletContext().getResourceAsStream(ActionServlet.WORKSPACE_SECURITY_XML));
+					xmlSource = new StreamSource(request.getSession().getServletContext().getResourceAsStream(workspaceSecurityXml));
 					//TRACE
 					Trace.DEBUG(this, "xmlSource 2:"+xmlSource);
 				}
@@ -177,8 +181,8 @@ public class SrvIndexLoginValider extends SrvGenerique {
 				try {
 					if (bOk) {
 	                  request.getSession().setAttribute("BeanAuthentification", bean);
-	                  request.getSession().setAttribute(ActionServlet.SECURITY_XSL, ActionServlet.WORKSPACE_SECURITY_XSL);
-	                  request.getSession().setAttribute(ActionServlet.SECURITY_XML, ActionServlet.WORKSPACE_SECURITY_XML);
+	                  request.getSession().setAttribute(ActionServlet.SECURITY_XSL, workspaceSecutiryXsl);
+	                  request.getSession().setAttribute(ActionServlet.SECURITY_XML, workspaceSecurityXml);
 	                }
 					else {
 						if (request.getSession().getAttribute("BeanAuthentification")!=null)
@@ -192,5 +196,20 @@ public class SrvIndexLoginValider extends SrvGenerique {
 				}
 			}
 		}
+	}
+
+	// SPRINGBOOT
+	protected URL getResource(String workspaceSecutiryXsl) throws MalformedURLException {
+		return new java.net.URL("file", "", workspaceSecutiryXsl);
+	}
+
+	// SPRINGBOOT
+	protected String getWorkspaceSecurityXml() {
+		return ActionServlet.WORKSPACE_SECURITY_XML;
+	}
+
+	// SPRINGBOOT
+	protected String getWorkspaceSecutiryXsl() {
+		return ActionServlet.WORKSPACE_SECURITY_XSL;
 	}
 }
