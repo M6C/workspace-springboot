@@ -5,7 +5,7 @@
     <xml:TagXslParameter name="myPWD" value="#S$BeanAuthentification:password#"/>
     <xml:TagXslResultDom name="resultDom" scope="session"/>
 </xml:TagXsl>
-<%String DOMAIN_NAME_ROOT = "/Workspace";%>
+<%String DOMAIN_NAME_ROOT = "";//"/Workspace";%>
 <html>
     <head>
         <title>

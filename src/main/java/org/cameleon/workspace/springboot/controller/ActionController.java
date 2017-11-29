@@ -38,9 +38,9 @@ public class ActionController {
     private static final String SERVLET_FILE = "servlet_file";
     private static String SECURITY_XML = "security_xml";
     private static String SECURITY_XSL = "security_xsl";
-    private static String WORKSPACE_SECURITY_XML = "FrameWork_Security.xml";
-    private static String WORKSPACE_SECURITY_XSL = "FrameWork_Security.xsl";
-	private static String PARAMETER_WORKSPACE_SECURITY = "workspace.security";
+//    private static String WORKSPACE_SECURITY_XML = "FrameWork_Security.xml";
+//    private static String WORKSPACE_SECURITY_XSL = "FrameWork_Security.xsl";
+//	private static String PARAMETER_WORKSPACE_SECURITY = "workspace.security";
 
     private ServletContext context;
 
@@ -57,7 +57,7 @@ public class ActionController {
     public ActionController(ServletContext servletContext) throws ServletException {
         this.context = servletContext;
         this.initFramework();
-        this.initWorkspace();;
+//        this.initWorkspace();
 	}
 
 	@RequestMapping("/action.servlet")
@@ -74,21 +74,21 @@ public class ActionController {
       if (UtilString.isNotEmpty(szServletFile))
         try {FrmWrkServlet.setup(getResource(szServletFile));}catch (Exception ex){}
       String szSecurityXml = getInitParameter(SECURITY_XML);
-      if (UtilString.isNotEmpty(szSecurityXml))
-        try {WORKSPACE_SECURITY_XML = getResource(szSecurityXml);}catch (Exception ex){}
-      String szSecurityXsl = getInitParameter(SECURITY_XSL);
-      if (UtilString.isNotEmpty(szSecurityXsl))
-        try {WORKSPACE_SECURITY_XSL = getResource(szSecurityXsl);}catch (Exception ex){}
+//      if (UtilString.isNotEmpty(szSecurityXml))
+//        try {WORKSPACE_SECURITY_XML = getResource(szSecurityXml);}catch (Exception ex){}
+//      String szSecurityXsl = getInitParameter(SECURITY_XSL);
+//      if (UtilString.isNotEmpty(szSecurityXsl))
+//        try {WORKSPACE_SECURITY_XSL = getResource(szSecurityXsl);}catch (Exception ex){}
     }
 
 	// SPRINGBOOT
-	protected void initWorkspace() {
-		String szSecurityXml = System.getProperty(PARAMETER_WORKSPACE_SECURITY);
-		if (UtilString.isNotEmpty(szSecurityXml)) {
-//			try {WORKSPACE_SECURITY_XML = getServletContext().getRealPath(szSecurityXml);}catch (Exception ex){}
-			try {WORKSPACE_SECURITY_XML = new File(szSecurityXml).getCanonicalPath();}catch (Exception ex){ex.printStackTrace();}
-		}
-	}
+//	protected void initWorkspace() {
+//		String szSecurityXml = System.getProperty(PARAMETER_WORKSPACE_SECURITY);
+//		if (UtilString.isNotEmpty(szSecurityXml)) {
+////			try {WORKSPACE_SECURITY_XML = getServletContext().getRealPath(szSecurityXml);}catch (Exception ex){}
+//			try {WORKSPACE_SECURITY_XML = new File(szSecurityXml).getCanonicalPath();}catch (Exception ex){ex.printStackTrace();}
+//		}
+//	}
 
     // SPRINGBOOT
     protected String getResource(String name) {

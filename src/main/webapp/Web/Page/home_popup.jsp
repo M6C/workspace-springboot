@@ -1,4 +1,4 @@
-<%String DOMAIN_NAME_ROOT = "/Workspace";%>
+<%String DOMAIN_NAME_ROOT = "";//"/Workspace";%>
 <html>
 	<head>
 		<title>

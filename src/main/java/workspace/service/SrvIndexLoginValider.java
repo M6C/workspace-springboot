@@ -6,10 +6,15 @@
  */
 package workspace.service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +35,7 @@ import framework.ressource.util.UtilXML;
 import framework.service.SrvGenerique;
 import framework.trace.Trace;
 import workspace.action.ActionServlet;
+import workspace.util.UtilFile;
 
 /**
  * @author rocada
@@ -85,7 +91,7 @@ public class SrvIndexLoginValider extends SrvGenerique {
 		Trace.DEBUG(this, "password:"+password);
 		if (UtilString.isNotEmpty(login)&&
 			UtilString.isNotEmpty(password)) {
-			String workspaceSecutiryXsl = getWorkspaceSecutiryXsl();
+			String workspaceSecurityXsl = getWorkspaceSecurityXsl();
 			String workspaceSecurityXml = getWorkspaceSecurityXml();
 			try {
 				//TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -93,15 +99,15 @@ public class SrvIndexLoginValider extends SrvGenerique {
 					"org.apache.xalan.processor.TransformerFactoryImpl",
 					Thread.currentThread().getContextClassLoader()); 
 				//TRACE
-				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XSL:"+workspaceSecutiryXsl);
+				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XSL:"+workspaceSecurityXsl);
 				Trace.DEBUG(this, "ActionServlet.WORKSPACE_SECURITY_XML:"+workspaceSecurityXml);
-				Source xslSource = new StreamSource(getResource(workspaceSecutiryXsl).openStream());
-				Source xmlSource = new StreamSource(getResource(workspaceSecurityXml).openStream());
+				Source xslSource = getSource(workspaceSecurityXsl);
+				Source xmlSource = getSource(workspaceSecurityXml);
 				//TRACE
 				Trace.DEBUG(this, "xslSource 1:"+xslSource);
 				Trace.DEBUG(this, "xmlSource 1:"+xmlSource);
 				if (xslSource==null) {
-					xslSource = new StreamSource(request.getSession().getServletContext().getResourceAsStream(workspaceSecutiryXsl));
+					xslSource = new StreamSource(request.getSession().getServletContext().getResourceAsStream(workspaceSecurityXsl));
 					//TRACE
 					Trace.DEBUG(this, "xslSource 2:"+xslSource);
 				}
@@ -122,6 +128,9 @@ public class SrvIndexLoginValider extends SrvGenerique {
 					Trace.DEBUG(this, "xmlSource 2:"+xmlSource);
 				}
 
+				// traceFile("workspaceSecurityXsl", workspaceSecurityXsl);
+				// traceFile("workspaceSecurityXml", workspaceSecurityXml);
+
 				//TRACE
 				Trace.DEBUG(this, "BEFOR transformer");
 				// Generate the transformer.
@@ -141,7 +150,7 @@ public class SrvIndexLoginValider extends SrvGenerique {
 				// Get the Xml result
 				String strResult = strWriter.toString();
 				//TRACE
-				Trace.DEBUG(this, "strResult:");//+strResult);
+				// Trace.DEBUG(this, "strResult:"+strResult);
 				// Check if the result is not empty
 				if (UtilString.isNotEmpty(strResult)) {
 					StringReader strReader = new StringReader(strResult);
@@ -181,7 +190,7 @@ public class SrvIndexLoginValider extends SrvGenerique {
 				try {
 					if (bOk) {
 	                  request.getSession().setAttribute("BeanAuthentification", bean);
-	                  request.getSession().setAttribute(ActionServlet.SECURITY_XSL, workspaceSecutiryXsl);
+	                  request.getSession().setAttribute(ActionServlet.SECURITY_XSL, workspaceSecurityXsl);
 	                  request.getSession().setAttribute(ActionServlet.SECURITY_XML, workspaceSecurityXml);
 	                }
 					else {
@@ -199,8 +208,14 @@ public class SrvIndexLoginValider extends SrvGenerique {
 	}
 
 	// SPRINGBOOT
-	protected URL getResource(String workspaceSecutiryXsl) throws MalformedURLException {
-		return new java.net.URL("file", "", workspaceSecutiryXsl);
+	protected StreamSource getSource(String resource) throws IOException, MalformedURLException {
+		URL url = resource == null ? null : getResource(resource);
+		return url == null ? null : new StreamSource(url.openStream());
+	}
+
+	// SPRINGBOOT
+	protected URL getResource(String file) throws MalformedURLException {
+		return new java.net.URL("file", "", file);
 	}
 
 	// SPRINGBOOT
@@ -209,7 +224,17 @@ public class SrvIndexLoginValider extends SrvGenerique {
 	}
 
 	// SPRINGBOOT
-	protected String getWorkspaceSecutiryXsl() {
+	protected String getWorkspaceSecurityXsl() {
 		return ActionServlet.WORKSPACE_SECURITY_XSL;
+	}
+
+	// SPRINGBOOT
+	private void traceFile(String title, String file) throws FileNotFoundException, IOException, MalformedURLException {
+		Trace.DEBUG(this, "---------------------> " + title + ":" + file);
+		URL resource = getResource(file);
+		String file2 = resource.getFile();
+		File file3 = new File(file2);
+		String[] list = UtilFile.read(file3, "UTF-8");
+		Arrays.asList(list).stream().forEach(l -> Trace.DEBUG(this, l));
 	}
 }
