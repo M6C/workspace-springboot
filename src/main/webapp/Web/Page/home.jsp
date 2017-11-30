@@ -1,5 +1,5 @@
-<%@ taglib uri="Framework_Taglib_Request.tld" prefix="request" %>
-<%@ taglib uri="Framework_Taglib_Xml.tld" prefix="xml" %>
+<%@ taglib uri="/WEB-INF/tld/Framework_Taglib_Request.tld" prefix="request" %>
+<%@ taglib uri="/WEB-INF/tld/Framework_Taglib_Xml.tld" prefix="xml" %>
 <xml:TagXsl xml="#S$security_xml#" xsl="#S$security_xsl#">
     <xml:TagXslParameter name="myID" value="#S$BeanAuthentification:login#"/>
     <xml:TagXslParameter name="myPWD" value="#S$BeanAuthentification:password#"/>
@@ -14,7 +14,7 @@
         <%--link href="<%=DOMAIN_NAME_ROOT%>/css/page/home.css" rel="stylesheet" type="text/css"--%>
         <jsp:include page="/css/page/home.jsp" />
         <script language="javascript" src="<%=DOMAIN_NAME_ROOT%>/js/page/home.js" type="text/javascript"></script>
-                <script language="javascript" src="<%=DOMAIN_NAME_ROOT%>/js/Popup.js" type="text/javascript"></script>
+        <script language="javascript" src="<%=DOMAIN_NAME_ROOT%>/js/Popup.js" type="text/javascript"></script>
     </head>
     <body bgcolor="#ffffff">
         <table width="100%">
