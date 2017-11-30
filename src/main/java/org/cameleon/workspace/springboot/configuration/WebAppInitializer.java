@@ -4,26 +4,16 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+@Configuration
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	
-	@Autowired
-	private Logger logger;
-	
-	
-	public WebAppInitializer() {
-		logger.error("--------------------------> WEBAPPINITIALIZER CONSTRUCTOR");
-	}
 	@Override
 	public void onStartup(ServletContext context) throws ServletException {
-		logger.error("--------------------------> STARTUP");
-		
-		
 		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.register(ApplicationConfig.class);
         ctx.setServletContext(context);
