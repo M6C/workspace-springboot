@@ -4,8 +4,8 @@
         <title>
             Index
         </title>
-            <link href="<%=DOMAIN_NAME_ROOT%>/css/page/index.css" rel="stylesheet" type="text/css">
-        <script language="javascript" src="<%=DOMAIN_NAME_ROOT%>/js/page/index.js" type="text/javascript"></script>
+            <link href="<%=DOMAIN_NAME_ROOT%>css/page/index.css" rel="stylesheet" type="text/css">
+        <script language="javascript" src="<%=DOMAIN_NAME_ROOT%>js/page/index.js" type="text/javascript"></script>
     </head>
     <body bgcolor="#ffffff" onload="setFocus()">
             <form name="formLogin" action="action.servlet" method="post">
