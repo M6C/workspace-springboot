@@ -30,7 +30,7 @@ import framework.ressource.util.UtilString;
 import framework.trace.Trace;
 
 @Controller
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 public class ActionController {
 
     private static final String CONTENT_TYPE = "text/html";

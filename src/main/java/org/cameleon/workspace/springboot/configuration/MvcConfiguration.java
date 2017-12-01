@@ -1,24 +1,19 @@
 package org.cameleon.workspace.springboot.configuration;
 
-import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-@EnableWebMvc
 //@EnableCaching
-public class MvcConfiguration extends WebMvcConfigurerAdapter{
-
-    @Bean
-    public CacheManager cacheManager(){
-        return new ConcurrentMapCacheManager("refData");
-    }
+public class MvcConfiguration extends WebMvcConfigurerAdapter {
+//
+//    @Bean
+//    public CacheManager cacheManager(){
+//        return new ConcurrentMapCacheManager("refData");
+//    }
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -39,5 +34,9 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 //        return source;
 //    }
 
-
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+        super.configurePathMatch(configurer);
+        configurer.setUseSuffixPatternMatch(false);
     }
+}

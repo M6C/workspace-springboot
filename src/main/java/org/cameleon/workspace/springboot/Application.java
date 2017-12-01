@@ -7,9 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+// https://stackoverflow.com/questions/24661289/spring-boot-not-serving-static-content
+// https://stackoverflow.com/questions/41075725/spring-boot-cannot-load-css-from-user-folder
 
 @SpringBootApplication
 @ComponentScan
+//@EnableWebMvc
 public class Application {
 
 	public static void main(String[] args) {
