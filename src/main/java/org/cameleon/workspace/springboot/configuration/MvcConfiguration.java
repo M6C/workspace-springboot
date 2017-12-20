@@ -6,26 +6,26 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@Configuration
+//@Configuration
 //@EnableCaching
-public class MvcConfiguration extends WebMvcConfigurerAdapter {
+public class MvcConfiguration { //extends WebMvcConfigurerAdapter {
 //
 //    @Bean
 //    public CacheManager cacheManager(){
 //        return new ConcurrentMapCacheManager("refData");
 //    }
 
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-//        registry.jsp().prefix("/Web/Page/").suffix(".jsp");
-    	registry.jsp().prefix("").suffix("");
-    }
+//    @Override
+//    public void configureViewResolvers(ViewResolverRegistry registry) {
+////        registry.jsp().prefix("/Web/Page/").suffix(".jsp");
+//    	registry.jsp().prefix("").suffix("");
+//    }
 
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/logout-success").setViewName("logout-success");
-        registry.addViewController("/login").setViewName("login");
-    }
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/logout-success").setViewName("logout-success");
+//        registry.addViewController("/login").setViewName("login");
+//    }
 
 //    @Bean
 //    public ResourceBundleMessageSource messageSource() {
@@ -34,9 +34,9 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 //        return source;
 //    }
 
-    @Override
-    public void configurePathMatch(PathMatchConfigurer configurer) {
-        super.configurePathMatch(configurer);
-        configurer.setUseSuffixPatternMatch(false);
-    }
+//    @Override
+//    public void configurePathMatch(PathMatchConfigurer configurer) {
+//        super.configurePathMatch(configurer);
+//        configurer.setUseSuffixPatternMatch(false);
+//    }
 }

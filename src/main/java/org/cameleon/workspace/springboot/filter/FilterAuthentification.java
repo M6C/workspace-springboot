@@ -15,12 +15,6 @@ import framework.ressource.FrmWrkServlet;
 import framework.ressource.bean.BeanServlet;
 import framework.ressource.util.UtilString;
 
-/**
- * @author rocada
- *
- * Pour changer le mod�le de ce commentaire de type gamp;eacute;namp;eacute;ramp;eacute;, allez � :
- * Fen�tre&gt;Pramp;eacute;famp;eacute;rences&gt;Java&gt;Gamp;eacute;namp;eacute;ration de code&gt;Code et commentaires
- */
 public class FilterAuthentification implements Filter {
 
   private FilterConfig filterConfig = null;
@@ -54,7 +48,7 @@ public class FilterAuthentification implements Filter {
         // Lecture du nom du param�tre qui indique si l'evenement � besoin d'une authentification
         String szOutputName = filterConfig.getInitParameter("OutputName");
         if (UtilString.isNotEmpty(szOutputName)) {
-          // R�cupere la valeur de l'authentification ou "true" par d�faut
+          // Recupere la valeur de l'authentification ou "true" par defaut
           String szOutputValue = (UtilString.isNotEmpty(bean.getAuthentification())) ? bean.getAuthentification() : Boolean.TRUE.toString();
           // Initialise le parametre d'authentification
           filterConfig.getServletContext().setAttribute(szOutputName, szOutputValue);
@@ -67,7 +61,7 @@ public class FilterAuthentification implements Filter {
 
   // SPRINGBOOT
   protected String getResource(String name) {
-  	// return filterConfig.getServletContext().getRealPath(szConfigFile)
-      return getClass().getResource(name).getPath();
+    return filterConfig.getServletContext().getRealPath(name);
+//    return getClass().getResource(name).getPath();
   }
 }

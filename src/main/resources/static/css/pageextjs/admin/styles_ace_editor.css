@@ -1,0 +1,20 @@
+.ace_gutter-cell.ace_breakpoint{ 
+    border-radius: 20px 0px 0px 20px; 
+    box-shadow: 0px 0px 1px 1px red inset; 
+}
+
+.btn_debug_start {
+background-color: rgb(128, 204, 255);
+background-image: none;
+}
+
+.btn_debug_stop {
+background-color: rgb(255, 100, 100);
+background-image: none;
+}
+
+.console {
+    background-color:black;
+    color:white;
+    background-image: none;
+}

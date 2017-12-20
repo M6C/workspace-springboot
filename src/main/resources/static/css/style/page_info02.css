@@ -1,10 +1,10 @@
-@import url ("/css/toolbar/ToolBar_Info02.css");
-@import url ("/css/component/treeview/TreeView_Info02.css");
-@import url ("/css/component/treeview/TreeViewFile_Info02.css");
-@import url ("/css/component/combo/Completion_Info02.css");
+@import url ("/resources/css/toolbar/ToolBar_Info02.css");
+@import url ("/resources/css/component/treeview/TreeView_Info02.css");
+@import url ("/resources/css/component/treeview/TreeViewFile_Info02.css");
+@import url ("/resources/css/component/combo/Completion_Info02.css");
 
 body {
-	background-image: url(/img/Style/Informatique/Background/info02.jpg);
+	background-image: url(/resources/img/Style/Informatique/Background/info02.jpg);
 /*	background-color: white;*/
 	background-attachment:fixed;
 	scrollbar-face-color: white;

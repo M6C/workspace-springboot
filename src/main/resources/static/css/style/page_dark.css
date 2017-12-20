@@ -3,7 +3,7 @@
 @import url ("../component/treeview/TreeViewFile_Dark01.css");
 @import url ("../component/combo/Completion_Dark01.css");
 body {
-	background-image: url(/img/Style/Dark/Background/Background01.jpg);
+	background-image: url(/resources/img/Style/Dark/Background/Background01.jpg);
 	background-color: #000000;
 	scrollbar-face-color: #333333;
 	scrollbar-highlight-color: #C2C2C2;

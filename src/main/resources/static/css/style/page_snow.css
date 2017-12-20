@@ -9,11 +9,11 @@
 @import url ("/css/component/combo/Completion_Snow01.css");
 
 body {
-/*	background-image: url(/img/Style/Snow/Background/snow01.gif);*/
-/*	background-image: url(/img/Style/Snow/Background/snow02.jpg);*/
-/*	background-image: url(/img/Style/Snow/Background/snow03.jpg);*/
-/*	background-image: url(/img/Style/Snow/Background/snow04.jpg);*/
-	background-image: url(/img/Style/Snow/Background/snow05.gif);
+/*	background-image: url(/resources/img/Style/Snow/Background/snow01.gif);*/
+/*	background-image: url(/resources/img/Style/Snow/Background/snow02.jpg);*/
+/*	background-image: url(/resources/img/Style/Snow/Background/snow03.jpg);*/
+/*	background-image: url(/resources/img/Style/Snow/Background/snow04.jpg);*/
+	background-image: url(/resources/img/Style/Snow/Background/snow05.gif);
 	background-color: white;
 	scrollbar-face-color: white;
 	scrollbar-highlight-color: #84B2C6;

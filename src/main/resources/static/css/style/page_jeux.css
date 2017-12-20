@@ -9,9 +9,9 @@
 @import url ("/css/component/combo/Completion_Snow01.css");
 
 body {
-	background-image: url(/img/Style/Jeux/Background/jeux01.jpg);
-/*	background-image: url(/img/Style/Jeux/Background/jeux02.jpg);*/
-/*	background-image: url(/img/Style/Jeux/Background/jeux03.jpg);*/
+	background-image: url(/resources/img/Style/Jeux/Background/jeux01.jpg);
+/*	background-image: url(/resources/img/Style/Jeux/Background/jeux02.jpg);*/
+/*	background-image: url(/resources/img/Style/Jeux/Background/jeux03.jpg);*/
 	background-color: white;
 	scrollbar-face-color: white;
 	scrollbar-highlight-color: #84B2C6;

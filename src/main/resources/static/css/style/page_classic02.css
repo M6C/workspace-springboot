@@ -1,13 +1,13 @@
-@import url ("/css/toolbar/ToolBar_Classic02.css");
-@import url ("/css/component/menu/MenuHeader_Classic02.css");
-@import url ("/css/component/treeview/TreeView_Classic02.css");
-@import url ("/css/component/treeview/TreeViewFile_Classic02.css");
-@import url ("/css/component/treeview/TreeViewImage_Classic02.css");
-@import url ("/css/component/combo/Completion_Classic02.css");
-@import url ("/css/component/navbar/NavBar_Classic02.css");
+@import url ("/resources/css/toolbar/ToolBar_Classic02.css");
+@import url ("/resources/css/component/menu/MenuHeader_Classic02.css");
+@import url ("/resources/css/component/treeview/TreeView_Classic02.css");
+@import url ("/resources/css/component/treeview/TreeViewFile_Classic02.css");
+@import url ("/resources/css/component/treeview/TreeViewImage_Classic02.css");
+@import url ("/resources/css/component/combo/Completion_Classic02.css");
+@import url ("/resources/css/component/navbar/NavBar_Classic02.css");
 
 body {
-    background-image: url(/img/Style/Informatique/Background/background_whoppix_01.jpg);
+    background-image: url(/resources/img/Style/Informatique/Background/background_whoppix_01.jpg);
 /*    background-color: #FFFFEE;*/
 /*
     background-attachment:fixed;

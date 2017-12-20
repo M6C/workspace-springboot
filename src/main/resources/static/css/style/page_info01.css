@@ -4,7 +4,7 @@
 @import url ("/css/component/combo/Completion_Info01.css");
 
 body {
-	background-image: url(/img/Style/Informatique/Background/info01.jpg);
+	background-image: url(/resources/img/Style/Informatique/Background/info01.jpg);
 /*	background-color: white;*/
 	background-attachment:fixed;
 	scrollbar-face-color: #999966;//FFDD99;//FFCC66;//white;

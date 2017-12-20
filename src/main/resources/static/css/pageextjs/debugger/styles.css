@@ -1,0 +1,22 @@
+html, body {
+   font:normal 12px verdana;
+   margin:0;
+   padding:0;
+   border:0 none;
+   overflow:hidden;
+   height:100%;
+}
+p {
+   margin:5px;
+}
+.proj {
+   background-image:url(/Workspace/essai/jsFramework/extjs/examples/shared/icons/fam/cog.png);
+}
+.dir {
+   background-image:url(/Workspace/essai/jsFramework/extjs/examples/shared/icons/fam/folder_go.png);
+}
+.file {
+   background-image:url(/Workspace/essai/jsFramework/extjs/examples/shared/icons/fam/book.png);
+}
+
+.breakpoint-row{ background-color: #F5C0C0 !important; } 

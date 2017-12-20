@@ -28,6 +28,7 @@ import framework.ressource.bean.BeanServlet;
 import framework.ressource.util.UtilReflect;
 import framework.ressource.util.UtilString;
 import framework.trace.Trace;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 //@EnableAutoConfiguration
@@ -45,8 +46,8 @@ public class ActionController {
     private ServletContext context;
 
     private List<List<String>> listParam = Arrays.asList(
-		Arrays.asList(CONFIG_FILE, "/xml/FrmWrk_Config.xml"), 
-		Arrays.asList(SERVLET_FILE, "/xml/ExtJs/FrmWrk_Servlet.xml")
+		Arrays.asList(CONFIG_FILE, "/Xml/FrmWrk_Config.xml"),
+		Arrays.asList(SERVLET_FILE, "/Xml/ExtJs/FrmWrk_Servlet.xml")
     );
 
     private Map<String, String> mapParam =
@@ -62,6 +63,7 @@ public class ActionController {
 
 	@RequestMapping("/action.servlet")
     public String action(HttpServletRequest request, HttpServletResponse response, String event) throws ServletException, IOException {
+        event = parseEvent(event);
         return process(request, response, event);
     }
 
@@ -134,7 +136,7 @@ public class ActionController {
                             redirect = bean.getForwardTargetError(request);
                         }
 
-						redirect(request, response, redirect);
+						//redirect(request, response, redirect);
                     } else {
                         Trace.DEBUG(this, "Don't redirect, target all ready commited: '" + redirect + "'");
                     }
@@ -145,6 +147,11 @@ public class ActionController {
             }
         }
 		return redirect;
+    }
+
+    // SPRINGBOOT
+    private String parseEvent(String event) {
+        return UtilString.split(event, ',')[0];
     }
 
 	protected void redirect(HttpServletRequest request, HttpServletResponse response, String redirect) throws ServletException, IOException {

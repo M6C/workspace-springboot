@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import framework.ressource.util.UtilString;
+import workspace.util.UtilResource;
 
 public class SrvIndexLoginValider extends workspace.service.SrvIndexLoginValider {
 
@@ -13,13 +14,13 @@ public class SrvIndexLoginValider extends workspace.service.SrvIndexLoginValider
 	// SPRINGBOOT
 	@Override
     protected URL getResource(String name) throws MalformedURLException {
-		URL res = getClass().getResource(name);
+		URL res = UtilResource.getResource(getClass(), name);
         return (res == null) ? getResourceSystemPath(name) : super.getResource(res.getPath());
     }
 	
 	@Override
 	protected String getWorkspaceSecurityXsl() {
-		return "/xsl/WorkSpace_Security.xsl";
+		return "/Xsl/WorkSpace_Security.xsl";
 	}
 	
 	@Override
@@ -28,7 +29,7 @@ public class SrvIndexLoginValider extends workspace.service.SrvIndexLoginValider
 		if (ret != null) {
 			ret = ret.replaceAll("-noverify$", "");
 		} else {
-			ret = "/xml/WorkSpace_Security.xml";
+			ret = "/Xml/WorkSpace_Security.xml";
 		};
 		return ret;
 	}
