@@ -1,4 +1,5 @@
 <%String DOMAIN_NAME_ROOT = "/resources";//"/Workspace";%>
+<%String VIEW_ROOT = "/WEB-INF/views";%>
 <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/toolbar/ToolBar_Classic02.css"/>
 <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/component/menu/MenuHeader_Classic02.css"/>
 <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/component/treeview/TreeView_Classic02.css"/>

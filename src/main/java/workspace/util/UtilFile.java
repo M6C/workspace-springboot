@@ -1,6 +1,6 @@
 package workspace.util;
 
-//import com.glaforge.i18n.io.CharsetToolkit;
+import com.glaforge.i18n.io.CharsetToolkit;
 
 import framework.ressource.util.UtilString;
 
@@ -53,33 +53,33 @@ public class UtilFile extends framework.ressource.util.UtilFile {
 
 	// http://stackoverflow.com/questions/499010/java-how-to-determine-the-correct-charset-encoding-of-a-stream/4013565#4013565
 	// http://mvnrepository.com/artifact/org.codehaus.guessencoding/guessencoding/1.4
-//    public static String guessEncoding(File file) throws IOException {
-//    	InputStream input = new FileInputStream(file);
-//        // Load input data
-//        long count = 0;
-//        int n = 0, EOF = -1;
-//        byte[] buffer = new byte[4096];
-//        ByteArrayOutputStream output = new ByteArrayOutputStream();
-//    	try {
-//	        while ((EOF != (n = input.read(buffer))) && (count <= Integer.MAX_VALUE)) {
-//	            output.write(buffer, 0, n);
-//	            count += n;
-//	            if (count > Integer.MAX_VALUE) {
-//	                break;
-//	            }
-//	        }
-//	
-//	        byte[] data = output.toByteArray();
-//	
-//	        return new CharsetToolkit(data).guessEncoding().displayName();
-//    	} finally {
-//        	try {
-//	    		output.close();
-//	    	} finally {
-//	    		input.close();
-//			}
-//		}
-//    }
+    public static String guessEncoding(File file) throws IOException {
+    	InputStream input = new FileInputStream(file);
+        // Load input data
+        long count = 0;
+        int n = 0, EOF = -1;
+        byte[] buffer = new byte[4096];
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+    	try {
+	        while ((EOF != (n = input.read(buffer))) && (count <= Integer.MAX_VALUE)) {
+	            output.write(buffer, 0, n);
+	            count += n;
+	            if (count > Integer.MAX_VALUE) {
+	                break;
+	            }
+	        }
+
+	        byte[] data = output.toByteArray();
+
+	        return new CharsetToolkit(data).guessEncoding().displayName();
+    	} finally {
+        	try {
+	    		output.close();
+	    	} finally {
+	    		input.close();
+			}
+		}
+    }
 
     // http://www.programcreek.com/java-api-examples/index.php?class=java.nio.file.Files&method=probeContentType
     // http://www.java-forums.org/advanced-java/82143-how-check-if-file-plain-text-binary.html

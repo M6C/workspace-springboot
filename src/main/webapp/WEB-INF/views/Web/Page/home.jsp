@@ -6,6 +6,7 @@
     <xml:TagXslResultDom name="resultDom" scope="session"/>
 </xml:TagXsl>
 <%String DOMAIN_NAME_ROOT = "/resources";//"/Workspace";%>
+<%String VIEW_ROOT = "/WEB-INF/views";%>
 <html>
     <head>
         <title>

@@ -1,0 +1,129 @@
+<%--
+Paramètres à definir pour utiliser ce composant
+  -- Obligatoires:
+    * myID  : Login de l'utilisateur connectamp;eacute;
+    * myPWD : Password de l'utilisateur connectamp;eacute;
+  -- Optionnels
+    * paramOther : Autres paramètres à mettre dans les 'value' des options dans le changement de projets
+--%>
+<%@ taglib uri="Framework_Taglib_Html.tld" prefix="html" %>
+<%@ taglib uri="Framework_Taglib_Request.tld" prefix="request" %>
+<%@ taglib uri="Framework_Taglib_Xml.tld" prefix="Xml" %>
+
+<link rel="stylesheet" type="text/css" href="/Workspace/essai/jsFramework/extjs/resources/css/ext-all.css" />
+<script type="text/javascript" src="/Workspace/essai/jsFramework/extjs/examples/shared/examples.js"></script>
+<script type="text/javascript" src="selectbox.js"></script> 
+
+<script type="text/javascript">
+Ext.onReady(function(){
+    Ext.QuickTips.init();
+	Ext.namespace('Ext.workspace.data');
+
+	//Ext.workspace.data.project = { 'Projects':[
+	//    {'name':''}
+	//    <Xml:TagXml name="resultDom" scope="session" path="/ROOT/USER/PROFILES/PROFILE/APPLICATIONS/APPLICATION">
+	//    ,{'name':'<Xml:TagXmlValue path="@Name"/>'}
+	//	</Xml:TagXml>
+	//]};
+	Ext.workspace.data.project = [
+	    {'name':''}
+	    <Xml:TagXml name="resultDom" scope="session" path="/ROOT/USER/PROFILES/PROFILE/APPLICATIONS/APPLICATION">
+	    ,{'name':'<Xml:TagXmlValue path="@Name"/>'}
+		</Xml:TagXml>
+	];
+	//Ext.workspace.data.project = { 'Projects':[
+ 	//    ''
+ 	//    <Xml:TagXml name="resultDom" scope="session" path="/ROOT/USER/PROFILES/PROFILE/APPLICATIONS/APPLICATION">
+ 	//    ,'<Xml:TagXmlValue path="@Name"/>'
+ 	//	</Xml:TagXml>
+ 	//]};
+	
+	//simple array store
+	/*
+	var store = new Ext.data.ArrayStore({
+	    fields: ['name'],
+	    data : Ext.workspace.data.project
+	});
+	*/
+	var store = new Ext.data.SimpleStore({
+	    fields: ['name_'],
+	    data : [
+	    	    {"name_":""}
+	    	    <Xml:TagXml name="resultDom" scope="session" path="/ROOT/USER/PROFILES/PROFILE/APPLICATIONS/APPLICATION">
+	    	    ,{"name_":"<Xml:TagXmlValue path='@Name'/>"}
+	    		</Xml:TagXml>
+	    		]
+	});
+	/*
+	var recordDef = Ext.data.Record.create([
+		{name: 'name', mapping: 'name'},     // "mapping" property not needed if it's the same as "name"
+	    {name: 'occupation'},                // This field will use "occupation" as the mapping.
+	]);
+	var store = new Ext.data.Store({
+        url: '/Workspace/action.servlet?event=JsonProjectName',
+        autoLoad: true, // required for the combo that does not use Ajax
+        //reader: new Ext.data.JsonReader(
+        //    {root:'Projects'},
+        //	[{name: 'name' , mapping:'name'}
+		//	]
+        //),
+        reader: new Ext.data.JsonReader({
+            root:'Projects',
+        	id: 'name'
+			}, recordDef),
+        //reader: new Ext.data.XmlReader(
+        //        { record: 'category', id: 'id'},
+        //        [ { name: 'name', type: 'string' } ]
+        //      ),
+        listeners: {
+          load: function(records, options) {
+            //console.log( 'loaded ' + records.totalLength + ' records');
+        	  alert( 'loaded ' + records.totalLength + ' records');
+          },
+          loadexception: function(proxy, options, response, error) {
+            //console.log('error loading records from server:');
+            //console.log("\tfile: "+error.fileName);
+            //console.log("\tline: "+error.lineNumber);
+            alert('error loading records from server:'+
+            ' \t file: '+error.fileName+
+            ' \t response: '+response+
+            ' \t line: '+error.lineNumber);
+          }
+        }
+      });
+    */
+    /*
+	var combo = new Ext.form.ComboBox({
+		
+	    store: store,
+	    displayField:'name_',
+	    typeAhead: true,
+	    mode: 'local',
+	    forceSelection: true,
+	    triggerAction: 'all',
+	    emptyText:'Select a project...',
+	    selectOnFocus:true,
+	    applyTo: 'local-project',
+        onSelect: function(record){ // override default onSelect to do redirect
+	        window.location = 
+		        String.format('/Workspace/action.servlet'+
+				'?event={0}&application={1}'+
+	        	'<request:TagPrintAttribut name="paramOther" scope="request"/>', 
+	        	'<request:TagPrintAttribut name="eventDst" scope="request"/>', record.data.name);
+	    }
+	});
+	*/
+	var combo = new Ext.form.ComboBox({
+        store: store,
+        displayField:'name_',
+        typeAhead: true,
+        mode: 'local',
+        forceSelection: true,
+        triggerAction: 'all',
+        emptyText:'Select a project...',
+        selectOnFocus:true,
+        applyTo: 'local-project'
+    });
+});
+</script>
+<input type="text" id="local-project" size="20"/> 
