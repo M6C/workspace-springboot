@@ -36,7 +36,7 @@ function create_WindowServerWebCommand(windowEl,formId,comboId,statusbarId,cmd) 
 //  	  Ext.getCmp(statusbarId).showBusy(pleaseWaitMessage);
 //  		var project = Ext.getCmp('project').value;
 //  		var pack = Ext.getCmp('package').value;
-//  		var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonServerWebCommand';
+//  		var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonServerWebCommand';
 //  		var wndWaiting = showWindowWaiting(); //Ext.MessageBox.wait(runningProcessMessage, pleaseWaitMessage);//wndWaiting.show();
 //  		Ext.Ajax.request({
 //  		   url: requestUrl,

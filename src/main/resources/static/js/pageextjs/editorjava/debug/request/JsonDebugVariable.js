@@ -13,7 +13,7 @@ Ext.define('Workspace.editorjava.debug.request.JsonDebugVariable',  {
     request: function(paramCallBack) { 
         var me = this;
 		Ext.Ajax.request({  
-			url : DOMAIN_NAME_ROOT + '/action.servlet?event=DebuggerBreakpointVariableExtJs',
+			url : ACTION_SERVLET_ROOT + '/action.servlet?event=DebuggerBreakpointVariableExtJs',
 			headers: {'Content-Type': 'application/json; charset=UTF-8'},
 			method: 'GET',
 			params : me.params,

@@ -12,7 +12,7 @@ Ext.define('Workspace.admin.window.userdetail.tree.TreeUserDetailExtjs4', {
 			store: Ext.create('Ext.data.TreeStore', {
 			    proxy: {
 			        type: 'ajax',
-			        url : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonUserDetail',
+			        url : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonUserDetail',
 			        reader: {
 			            type: 'json'
 			        }

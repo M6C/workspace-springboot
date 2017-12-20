@@ -15,7 +15,7 @@ Workspace.window.ClasspathDetail.tree.TreeClasspathDetail = Ext.extend(Ext.tree.
     collapsible: false,
     rootVisible: false,
 	loader: new Ext.tree.TreeLoader({
-		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonClasspathDetail',
+		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonClasspathDetail',
 		//requestMethod: 'GET',
 		//preloadChildren: true,
 		clearOnLoad: true,
@@ -59,7 +59,7 @@ Ext.reg('WorkspaceTreeTreeClasspathDetail',Workspace.window.ClasspathDetail.tree
 //    //var Tree = Ext.tree;
 //
 //    var treeLoader = new Ext.tree.TreeLoader({
-//		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonClasspathDetail',
+//		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonClasspathDetail',
 //		//requestMethod: 'GET',
 //		//preloadChildren: true,
 //		clearOnLoad: true

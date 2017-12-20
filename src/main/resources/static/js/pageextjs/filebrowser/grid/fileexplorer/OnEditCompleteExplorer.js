@@ -15,7 +15,7 @@ Ext.define('Workspace.filebrowser.grid.fileexplorer.OnEditCompleteExplorer',  {
 			            var mainCenterTab = mainCenterPanel.getActiveTab();
 		
 			            var oldValue = mainCenterTab.id+'/'+startValue, newValue = mainCenterTab.id+'/'+value;
-		            	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=FileBrowserRename';
+		            	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=FileBrowserRename';
 			  			Ext.Ajax.request({
 			  			   url: requestUrl,
 			  			   params: {oldName:oldValue, newName:newValue},

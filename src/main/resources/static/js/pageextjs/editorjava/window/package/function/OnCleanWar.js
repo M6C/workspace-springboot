@@ -10,7 +10,7 @@ Ext.define('Workspace.editorjava.window.package.function.OnCleanWar',  {
 				resultMessageFailure : 'Clean War failed',
 				type : 'War',
 				statusbarId : 'package_statusbar_clean_war',
-				requestUrl : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCleanWar'
+				requestUrl : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCleanWar'
 		   	};
 			Ext.create('Workspace.editorjava.window.package.function.OnSubmit').call(config);
 		}

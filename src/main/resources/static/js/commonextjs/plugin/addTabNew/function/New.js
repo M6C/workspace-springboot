@@ -38,7 +38,7 @@ Ext.define('Workspace.common.plugin.addTabNew.function.New',  {
 
             var callBack = function(btn, fileName) {
         	    if (btn == 'yes' && fileName != ''){
-    		    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=FileBrowserNew';
+    		    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=FileBrowserNew';
     	  			Ext.Ajax.request({
     	  			   url: requestUrl,
     	  			   params: {type:typeNew, pathDst:itemPathDst, name:fileName},

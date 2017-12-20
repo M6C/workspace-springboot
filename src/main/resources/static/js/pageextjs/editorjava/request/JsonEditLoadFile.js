@@ -26,7 +26,7 @@ Ext.define('Workspace.editorjava.request.JsonEditLoadFile',  {
     		editor.changeScrollLeft = editor.getSession().getScrollLeft();
         };
 		Ext.Ajax.request({  
-			url : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditLoadFile',
+			url : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditLoadFile',
 			headers: {'Content-Type': 'application/json; charset=UTF-8'},
 			method: 'GET',
 			params :{filename:me.panelId},

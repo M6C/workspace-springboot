@@ -8,7 +8,7 @@ function showCleanWar() {
 //		resultMessageFailure : 'Clean War failed',
 //		type : 'War',
 //		statusbarId : 'package_statusbar_clean_war',
-//		requestUrl : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCleanWar'
+//		requestUrl : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCleanWar'
 //   	}).call();
 
 	Ext.create('Workspace.editorjava.window.WindowPackage',

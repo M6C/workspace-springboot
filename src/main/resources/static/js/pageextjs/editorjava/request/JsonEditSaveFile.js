@@ -4,7 +4,7 @@
 Ext.define('Workspace.editorjava.request.JsonEditSaveFile',  {
 
 	method:'POST',
-	url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditSaveFile',
+	url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditSaveFile',
 
 	callback:function(options, success, response) {
         var me = this;

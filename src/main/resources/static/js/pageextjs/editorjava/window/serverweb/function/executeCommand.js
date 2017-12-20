@@ -6,7 +6,7 @@ Ext.define('Workspace.editorjava.window.serverweb.function.executeCommand', {
 		  Ext.getCmp(statusbarId).showBusy(pleaseWaitMessage);
 			var project = Ext.getCmp('project').value;
 			var pack = Ext.getCmp('package').value;
-			var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonServerWebCommand';
+			var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonServerWebCommand';
 	
 			console.info('url:\''+requestUrl+'\' params:application=\''+project+'\',package:\''+pack+'\',command:\''+cmd+'\'');
 	

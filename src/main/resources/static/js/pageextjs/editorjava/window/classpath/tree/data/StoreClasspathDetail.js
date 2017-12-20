@@ -9,7 +9,7 @@ Ext.define('Workspace.editorjava.window.classpath.tree.data.StoreClasspathDetail
 	,
     proxy: {
         type: 'ajax',
-        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonClasspathDetail',
+        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonClasspathDetail',
 		method: 'GET',
         reader: {
             type: 'json'

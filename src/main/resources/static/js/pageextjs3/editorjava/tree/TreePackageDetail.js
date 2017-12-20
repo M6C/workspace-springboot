@@ -15,7 +15,7 @@ Workspace.tree.TreePackageDetail = Ext.extend(Ext.tree.TreePanel, {
     collapsible: false,
     rootVisible: false,
 	loader: new Ext.tree.TreeLoader({
-		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonPackageDetail',
+		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonPackageDetail',
 		//requestMethod: 'GET',
 		//preloadChildren: true,
 		clearOnLoad: true,
@@ -66,7 +66,7 @@ Ext.reg('WorkspaceTreeTreePackageDetail',Workspace.tree.TreePackageDetail);
 //    //var Tree = Ext.tree;
 //
 //    var treeLoader = new Ext.tree.TreeLoader({
-//		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonPackageDetail',
+//		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonPackageDetail',
 //		//requestMethod: 'GET',
 //		//preloadChildren: true,
 //		clearOnLoad: true

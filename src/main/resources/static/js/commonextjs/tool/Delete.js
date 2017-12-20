@@ -29,7 +29,7 @@ Ext.define('Workspace.common.tool.Delete', {
 		      if (btn == 'yes'){
 				var wndWait = Workspace.common.window.WindowWaiting.showWindowWaiting();
 		    	Ext.Array.each(selectionModel.getSelection(), function(item, index, allItems) {
-		        	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=EditorJavaPageDeleteValider';
+		        	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=EditorJavaPageDeleteValider';
 		    		Ext.Ajax.request({
 		    		   url: requestUrl,
 		    		   params: {fileName:item.internalId},

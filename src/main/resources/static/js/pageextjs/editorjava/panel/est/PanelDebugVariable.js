@@ -27,7 +27,7 @@ Ext.define('Workspace.editorjava.panel.est.PanelDebugVariable', {
         	,
             proxy: {
                 type: 'ajax',
-    			url : DOMAIN_NAME_ROOT + '/action.servlet?event=DebuggerBreakpointVariableIdExtJs',
+    			url : ACTION_SERVLET_ROOT + '/action.servlet?event=DebuggerBreakpointVariableIdExtJs',
     			headers: {'Content-Type': 'application/json; charset=UTF-8'},
     			method: 'GET',
                 reader: {

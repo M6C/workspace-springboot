@@ -12,7 +12,7 @@ Workspace.window.ToolUpload.function.upload = (function() {
             form_action=1;
             var project = Ext.getCmp('project').value;
             build_content_panel.getForm().submit({
-                url: DOMAIN_NAME_ROOT + '/action.servlet?event=EditorJavaPageUploadValider',
+                url: ACTION_SERVLET_ROOT + '/action.servlet?event=EditorJavaPageUploadValider',
                 params: {application:project},
                 waitMsg: 'Uploading file...',
                 success: function(form,action) {

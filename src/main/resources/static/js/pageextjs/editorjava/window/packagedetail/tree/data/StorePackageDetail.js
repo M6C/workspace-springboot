@@ -8,7 +8,7 @@ Ext.define('Workspace.editorjava.window.packagedetail.tree.data.StorePackageDeta
 
     proxy: {
         type: 'ajax',
-        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonPackageDetail',
+        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonPackageDetail',
 		method: 'GET',
         reader: {
             type: 'json'

@@ -102,7 +102,7 @@ Ext.define('Workspace.editorjava.aceeditor.command.CommandOptimizeImport',  {
 
 			Ext.Ajax.request({
 				method:'GET',
-				url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonOptimizeImport',
+				url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonOptimizeImport',
 				params:{application:paramApplication, classname: paramClassname},
 				callback:me.callbackImport,
 				scope: me

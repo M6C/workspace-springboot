@@ -111,7 +111,7 @@ function create_WindowToolXmlXsl(windowEl,submitFunction) {
 //	function updateXslParameter() {
 //	  	var project = Ext.getCmp('project').value;
 //  		var pathXsl = Ext.getCmp('xsl_filename_id').getValue();//Ext.getCmp('xsl_filename_id').value;
-//  		var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonXmlXslParameter';
+//  		var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonXmlXslParameter';
 //  		console.info('updateXslParameter pathXsl:'+pathXsl);
 //		showWindowWaiting();
 //  		Ext.Ajax.request({

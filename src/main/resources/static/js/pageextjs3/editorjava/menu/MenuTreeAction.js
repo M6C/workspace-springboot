@@ -9,7 +9,7 @@ function onMenuTreeZip(item, event) {
 	    	console.info('onMenuTreeZip pathSrc:'+pathSrc+' pathDst:'+pathDst);
 	    	var project = Ext.getCmp('project').value;
 	    	var fileName = text;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditZip';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditZip';
   			Ext.Ajax.request({
   			   url: requestUrl,
   			   params: {application:project,pathSrc:pathSrc,pathDst:pathDst,fileName:fileName},
@@ -53,7 +53,7 @@ function onMenuTreePaste(item, event) {
 	    	var parent = item.parentMenu.parentMenu;
 	    	var root = Ext.getCmp('treeDirectory').getRootNode();
 
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditPaste';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditPaste';
 	    	var operation = root.attributes.nodeaction;
 	    	var project = Ext.getCmp('project').value;
 	    	var pathSrc = root.attributes.node.attributes.id;
@@ -95,7 +95,7 @@ function onMenuTreeNew(item, event, type) {
 	    if (btn == 'ok' && text != ''){
 	    	var parent = item.parentMenu;
 
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditNew';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditNew';
 	    	var project = Ext.getCmp('project').value;
 	    	var path = parent.data.attributes.id;
 	    	var name = text;
@@ -130,7 +130,7 @@ function onMenuTreeDelete(item, event) {
 
 	    	console.info('onMenuTreeDelete parent.data:'+parent.data);
 
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditDelete';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditDelete';
 	    	var project = Ext.getCmp('project').value;
 	    	var fileName = parent.data.attributes.id;
 
@@ -163,7 +163,7 @@ function onMenuTreeRename(item, event) {
 	Ext.Msg.prompt('Rename', 'Please enter a name:', function(btn, text){
 	    if (btn == 'ok' && text != ''){
 
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditRename';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditRename';
 	    	var project = Ext.getCmp('project').value;
 	    	var path = oldName.substr(0, oldName.lastIndexOf('\\')+1);
 	    	var newName = path+text;
@@ -200,7 +200,7 @@ function onMenuTreeSplit(item, event) {
 	    	console.info('onMenuTreeSplit pathSrc:'+pathSrc+' pathDst:'+pathDst);
 	    	var project = Ext.getCmp('project').value;
 	    	var lineNumber = text;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditSplit';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditSplit';
   			Ext.Ajax.request({
   			   url: requestUrl,
   			   params: {application:project,pathFile:pathSrc,pathDestination:pathDst,lineNumber:lineNumber},

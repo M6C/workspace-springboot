@@ -11,7 +11,7 @@ Ext.define('Workspace.common.grid.data.StoreFileExplorer', {
 		var me = this;
 
 		config.proxy = Ext.create('Ext.data.proxy.Ajax', {
-	        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonFileExplorer',
+	        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonFileExplorer',
 			method: 'GET',
 	        reader: {
 	            type: 'json'

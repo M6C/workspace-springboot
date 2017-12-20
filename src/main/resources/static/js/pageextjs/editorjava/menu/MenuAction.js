@@ -11,7 +11,7 @@ function cleanBuild() {
 	Ext.Msg.confirm('Confirm', 'Clean ?', function(btn, text) {
       if (btn == 'yes'){
     	var project = Ext.getCmp('project').value;
-    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCleanBuild';
+    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCleanBuild';
 		var wndWait = Workspace.common.window.WindowWaiting.showWindowWaiting();
 		Ext.Ajax.request({
 		   url: requestUrl,
@@ -31,7 +31,7 @@ function build() {
 	Ext.Msg.confirm('Confirm', 'Build ?', function(btn, text) {
 	      if (btn == 'yes'){
 	    	var project = Ext.getCmp('project').value;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditCompileProject';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditCompileProject';
 	    	var wndWait = Workspace.common.window.WindowWaiting.showWindowWaiting();
 			Ext.Ajax.request({
 			   url: requestUrl,
@@ -121,7 +121,7 @@ function showToolXmlXsl() {
 	  			var wndWait = Workspace.common.window.WindowWaiting.showWindowWaiting();
 				var values = Ext.getCmp('xml_xsl_content_panel').getForm().getValues(false);
 				Ext.Ajax.request({
-				   url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonXmlXsl',
+				   url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonXmlXsl',
 				   params: values,
 					success: function(result, request) {
 						var resultMessage = '';

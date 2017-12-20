@@ -8,7 +8,7 @@ Ext.define('Workspace.common.tree.data.StoreFileExplorerExtjs4', {
 	,
     proxy: {
         type: 'ajax',
-        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonFileExplorer',
+        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonFileExplorer',
 		method: 'GET',
         reader: {
             type: 'json'

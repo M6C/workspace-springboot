@@ -16,7 +16,7 @@ Workspace.tree.TreeCompletion = Ext.extend(Ext.tree.TreePanel, {
     rootVisible: false,
 	//loader: treeLoader,
 	loader: new Ext.tree.TreeLoader({
-		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCompletion',
+		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCompletion',
 		//requestMethod: 'GET',
 		//preloadChildren: true,
 		clearOnLoad: true,
@@ -78,7 +78,7 @@ Ext.reg('WorkspaceTreeTreeCompletion',Workspace.tree.TreeCompletion);
 //    //var Tree = Ext.tree;
 //
 //    var treeLoader = new Ext.tree.TreeLoader({
-//		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCompletion',
+//		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCompletion',
 //		//requestMethod: 'GET',
 //		//preloadChildren: true,
 //		clearOnLoad: true

@@ -65,7 +65,7 @@ Ext.define('Workspace.common.draganddrop.function.CopyMove',  {
 				var itemPathSrc = raw.id;//raw.internalId;//raw.getKey();
 
 		        Ext.Ajax.request({
-		        	url: DOMAIN_NAME_ROOT + '/action.servlet?event=FileBrowserCopyMove',
+		        	url: ACTION_SERVLET_ROOT + '/action.servlet?event=FileBrowserCopyMove',
 	    		    params: {
 	        			pathSrc:itemPathSrc, pathDst:itemPathDst, operation:dropAction
 	    		    },

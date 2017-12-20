@@ -30,7 +30,7 @@ Ext.define('Workspace.common.tool.Rename', {
 
         				var wndWait = Workspace.common.window.WindowWaiting.showWindowWaiting();
         		    	Ext.Array.each(selectionModel.getSelection(), function(item, index, allItems) {
-        		        	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=FileBrowserRename';
+        		        	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=FileBrowserRename';
         		    		Ext.Ajax.request({
         		    		   url: requestUrl,
         		    		   params: {oldName:oldFileName, newName:fileName},

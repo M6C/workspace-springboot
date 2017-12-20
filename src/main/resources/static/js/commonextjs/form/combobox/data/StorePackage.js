@@ -14,7 +14,7 @@ Workspace.common.form.combobox.data.StorePackage = Ext.extend(Ext.data.Store, {
 		//scope: this, //yourScope
         'beforeload' : function(dataProxy, params){
 			this.proxy = new Ext.data.HttpProxy({
-		        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonPackageName'+
+		        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonPackageName'+
 		        	'&xslParamName=pApplication;pType'+
 		        	'&pApplication='+Ext.getCmp('project').value+
 		        	'&pType='+this.pkgtype

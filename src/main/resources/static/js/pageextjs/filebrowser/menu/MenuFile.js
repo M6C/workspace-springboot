@@ -49,7 +49,7 @@ Ext.define('Workspace.filebrowser.menu.MenuFile',  {
 
 			    	var pathDst = config.tab.id;
 					var fileName = text.toLowerCase();
-			    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=EditorJavaPageZipValider';
+			    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=EditorJavaPageZipValider';
 		    		Ext.Ajax.request({
 		    		   url: requestUrl,
 		    		   params: {pathSrc:pathSrc, pathDst:pathDst, fileName:fileName},

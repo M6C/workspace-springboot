@@ -150,7 +150,7 @@ Workspace.debugger.TreeDirectory = Ext.extend(Workspace.tree.TreeDirectory, {
 				});
 	
 				Ext.Ajax.request({
-					url : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditLoadFile',
+					url : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditLoadFile',
 					method: 'GET',
 					params :{filename:panelId},
 					success: function ( result, request ) {

@@ -85,7 +85,7 @@ Ext.define('Workspace.editorjava.panel.south.PanelConsole', {
             	}
 
                 form.submit({
-                    url : DOMAIN_NAME_ROOT + '/action.servlet?event=AdminPageExecCmdValiderExtJs',
+                    url : ACTION_SERVLET_ROOT + '/action.servlet?event=AdminPageExecCmdValiderExtJs',
                     success: function(form, action) {
                     	me.updateResponse(me, true, action.result);
                     },

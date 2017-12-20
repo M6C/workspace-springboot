@@ -46,7 +46,7 @@ Ext.define('Workspace.filebrowser.button.ButtonFileCartDelete', {
 		                	var fileName = item.id;
 		    		        console.info('Workspace.filebrowser.button.ButtonFileCartDelete success delete:'+fileName);
 
-		                	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=FileBrowserDelete';
+		                	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=FileBrowserDelete';
 		    	  			Ext.Ajax.request({
 		    	  			   url: requestUrl,
 		    	  			   params: {fileName:fileName},

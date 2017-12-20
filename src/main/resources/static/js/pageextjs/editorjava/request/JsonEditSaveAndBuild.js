@@ -29,7 +29,7 @@ Ext.define('Workspace.editorjava.request.JsonEditSaveAndBuild',  {
             Workspace.editorjava.constant.ConstantState.inProgressBuild(true);
 			Ext.Ajax.request({
 				method:'POST',
-				url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditCompileProject',
+				url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditCompileProject',
 				callback:function(options, success, responseCompile) {
 					var jsonData = Ext.JSON.decode(responseCompile.responseText);
 					if (!Ext.isDefined(jsonData)) {
@@ -42,7 +42,7 @@ Ext.define('Workspace.editorjava.request.JsonEditSaveAndBuild',  {
 						if (me.autoDeploy == true) {
                             msg += "<br>Waiting for deploy complet."
     		    			Ext.Ajax.request({
-    		    				url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonAutoDeploy',
+    		    				url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonAutoDeploy',
     		    				callback:me.callbackAutoDeploy,
     		    				params:{application:me.application}
     		    			});
@@ -67,7 +67,7 @@ Ext.define('Workspace.editorjava.request.JsonEditSaveAndBuild',  {
 			    params['application'] = me.application;
 			}
 			Ext.Ajax.request({
-				url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonAutoDeploy',
+				url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonAutoDeploy',
 				callback:me.callbackAutoDeploy,
 				params:params
 			});

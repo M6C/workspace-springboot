@@ -78,7 +78,7 @@ Ext.define('Workspace.editorjava.panel.center.function.AddTab',  {
 				var filePanelEditor = filePanel.getComponent(panelEditorId);
 			
 				Ext.Ajax.request({
-					url : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditLoadFile',
+					url : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditLoadFile',
 					method: 'GET',
 					params :{filename:panelId},
 					success: function ( result, request ) {

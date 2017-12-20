@@ -42,7 +42,7 @@ Ext.define('Workspace.filebrowser.button.ButtonFileCartCopyMove', {
     		        console.info('Workspace.filebrowser.button.ButtonFileCartCopyMove success move/copy to:'+itemPathDst+' from:'+itemPathSrc);
 
     		        Ext.Ajax.request({
-	        		    url: DOMAIN_NAME_ROOT + '/action.servlet?event=FileBrowserCopyMove',
+	        		    url: ACTION_SERVLET_ROOT + '/action.servlet?event=FileBrowserCopyMove',
 	        		    params: {
 		        			pathSrc:itemPathSrc, pathDst:itemPathDst, operation:item.dropAction
 	        		    },

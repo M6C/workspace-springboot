@@ -26,7 +26,7 @@ Ext.define('Workspace.editorjava.form.combobox.ComboProject', {
             Workspace.common.tool.Pop.info(me, "Initialize Project '" + application + "'.", {detail: 'Waiting for complet.'});
             Workspace.editorjava.constant.ConstantState.inProgressInitialize(true);
             Ext.Ajax.request({
-                url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonInitializeProject',
+                url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonInitializeProject',
                 method: 'GET',
                 params: {application: application},
                 success: function() {

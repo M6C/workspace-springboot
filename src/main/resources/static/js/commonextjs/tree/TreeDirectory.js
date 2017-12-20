@@ -14,7 +14,7 @@ Workspace.tree.TreeDirectory = Ext.extend(Ext.tree.TreePanel, {
     collapsible: false,
     rootVisible: false,
 	loader: new Ext.tree.TreeLoader({
-		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonTreeDirectory',
+		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonTreeDirectory',
 		requestMethod: 'GET',
 		preloadChildren: true,
 		clearOnLoad: true,
@@ -60,7 +60,7 @@ Ext.reg('WorkspaceTreeTreeDirectory',Workspace.tree.TreeDirectory);
 //    //var Tree = Ext.tree;
 //
 //    var treeLoader = new Ext.tree.TreeLoader({
-//		url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonTreeDirectory',
+//		url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonTreeDirectory',
 //		requestMethod: 'GET',
 //		preloadChildren: true,
 //		clearOnLoad: true

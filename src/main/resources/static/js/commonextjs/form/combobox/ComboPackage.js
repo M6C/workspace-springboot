@@ -40,7 +40,7 @@ Ext.reg('WorkspaceCommonFormComboboxComboPackage', Workspace.common.form.combobo
 //	*/
 //	var storePackage = new Ext.data.Store({
 //	    proxy: new Ext.data.HttpProxy({
-//	        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonPackageName'+
+//	        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonPackageName'+
 //	        	'&xslParamName=pApplication;pType'+
 //	        	'&pApplication='+project+
 //	        	'&pType='+type

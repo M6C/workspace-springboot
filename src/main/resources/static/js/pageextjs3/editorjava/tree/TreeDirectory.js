@@ -123,7 +123,7 @@ Workspace.editorjava.TreeDirectory = Ext.extend(Workspace.tree.TreeDirectory, {
 			    				Ext.MessageBox.updateText('Saving process...');
 						    	Ext.Ajax.request({
 									method:'POST',
-									url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditSaveFile',
+									url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditSaveFile',
 									callback:function(options, success, response) { 
 		
 						    			if (pnlEdit.build) {
@@ -131,7 +131,7 @@ Workspace.editorjava.TreeDirectory = Ext.extend(Workspace.tree.TreeDirectory, {
 						    				var application = Ext.getCmp('project').value;
 											Ext.Ajax.request({
 												method:'POST',
-												url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditCompileProject',
+												url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditCompileProject',
 												callback:create_WindowResultText(response,function(btn, text){
 									  		    	hideWindowWaiting("Building complete.", 1);
 										  		}),
@@ -164,7 +164,7 @@ Workspace.editorjava.TreeDirectory = Ext.extend(Workspace.tree.TreeDirectory, {
 			var filePanelEditor = filePanel.findById(panelEditorId);
 		
 			Ext.Ajax.request({
-				url : DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditLoadFile',
+				url : ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditLoadFile',
 				method: 'GET',
 				params :{filename:panelId},
 				success: function ( result, request ) {

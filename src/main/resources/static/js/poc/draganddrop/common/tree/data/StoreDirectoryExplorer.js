@@ -8,7 +8,7 @@ Ext.define('Workspace.poc.draganddrop.common.tree.data.StoreDirectoryExplorer', 
 	,
     proxy: {
         type: 'ajax',
-        url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonFileExplorer',
+        url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonFileExplorer',
 		method: 'GET',
         reader: {
             type: 'json'

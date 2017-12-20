@@ -7,7 +7,7 @@ function onMenuCVSAdd(item, event) {
 	    	showWindowWaiting();
 	    	console.info('onMenuCVSAddFile fileName:'+filename+' messageStr:'+text);
 	    	var project = Ext.getCmp('project').value;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=AjaxCVSAddFile';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=AjaxCVSAddFile';
   			Ext.Ajax.request({
   			   url: requestUrl,
   			   params: {application:project,fileName:filename,messageStr:text,autocommit:true},
@@ -31,7 +31,7 @@ function onMenuCVSCommit(item, event) {
 	    	showWindowWaiting();
 	    	console.info('onMenuCVSCommit fileName:'+filename);
 	    	var project = Ext.getCmp('project').value;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=AjaxCVSCommit';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=AjaxCVSCommit';
   			Ext.Ajax.request({
   			   url: requestUrl,
   			   params: {application:project,fileName:filename,messageStr:text},
@@ -55,7 +55,7 @@ function onMenuCVSUpdateFile(item, event) {
 	    	showWindowWaiting();
 	    	console.info('onMenuCVSUpdateFile fileName:'+filename);
 	    	var project = Ext.getCmp('project').value;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=AjaxCVSUpdateFile';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=AjaxCVSUpdateFile';
   			Ext.Ajax.request({
   			   url: requestUrl,
   			   params: {application:project,fileName:filename},
@@ -79,7 +79,7 @@ function onMenuCVSUpdateDirectory(item, event) {
 	    	showWindowWaiting();
 	    	console.info('onMenuCVSUpdateDirectory fileName:'+filename);
 	    	var project = Ext.getCmp('project').value;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=AjaxCVSUpdateDirectory';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=AjaxCVSUpdateDirectory';
   			Ext.Ajax.request({
   			   url: requestUrl,
   			   params: {application:project,fileName:filename,recursive:true},

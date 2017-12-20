@@ -5,7 +5,7 @@ function cleanBuild() {
 	Ext.Msg.confirm('Confirm', 'Clean ?', function(btn, text) {
       if (btn == 'yes'){
     	var project = Ext.getCmp('project').value;
-    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCleanBuild';
+    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCleanBuild';
     	showWindowWaiting();
 		Ext.Ajax.request({
 		   url: requestUrl,
@@ -25,7 +25,7 @@ function build() {
 	Ext.Msg.confirm('Confirm', 'Build ?', function(btn, text) {
 	      if (btn == 'yes'){
 	    	var project = Ext.getCmp('project').value;
-	    	var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditCompileProject';
+	    	var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditCompileProject';
 	    	showWindowWaiting();
 			Ext.Ajax.request({
 			   url: requestUrl,
@@ -66,7 +66,7 @@ function showPackageJar() {
 	  	  Ext.getCmp('package_statusbar_jar').showBusy(pleaseWaitMessage);
 	  		var project = Ext.getCmp('project').value;
 	  		var pack = Ext.getCmp('package').value;
-	  		var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditPackage';
+	  		var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditPackage';
 	  		try {
 				showWindowWaiting();
 		  		Ext.Ajax.request({
@@ -130,7 +130,7 @@ function showPackageWar() {
 	  	  Ext.getCmp('package_statusbar_war').showBusy(pleaseWaitMessage);
 	  		var project = Ext.getCmp('project').value;
 	  		var pack = Ext.getCmp('package').value;
-	  		var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonEditPackage';
+	  		var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonEditPackage';
 			showWindowWaiting();
 	  		Ext.Ajax.request({
 	  		   url: requestUrl,
@@ -181,7 +181,7 @@ function showCleanWar() {
 	  	  Ext.getCmp('package_statusbar_clean_war').showBusy(pleaseWaitMessage);
 	  		var project = Ext.getCmp('project').value;
 	  		var pack = Ext.getCmp('package').value;
-	  		var requestUrl = DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCleanWar';
+	  		var requestUrl = ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCleanWar';
 	  		showWindowWaiting();
 	  		Ext.Ajax.request({
 	  		   url: requestUrl,
@@ -290,7 +290,7 @@ function showToolXmlXsl() {
 	  			showWindowWaiting();
 				var values = Ext.getCmp('xml_xsl_content_panel').getForm().getValues(false);
 				Ext.Ajax.request({
-				   url: DOMAIN_NAME_ROOT + '/action.servlet?event=JsonXmlXsl',
+				   url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonXmlXsl',
 				   params: values,
 					success: function(result, request) {
 						var resultMessage = '';

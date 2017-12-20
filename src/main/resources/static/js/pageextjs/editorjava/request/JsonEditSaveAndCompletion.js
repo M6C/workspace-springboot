@@ -21,7 +21,7 @@ Ext.define('Workspace.editorjava.request.JsonEditSaveAndCompletion',  {
 
     		Ext.Ajax.request({
     			method:'GET',
-    			url:DOMAIN_NAME_ROOT + '/action.servlet?event=JsonCompletion',
+    			url:ACTION_SERVLET_ROOT + '/action.servlet?event=JsonCompletion',
     			callback:function(opts, success, response) {
     				config.callbackCompletion(opts, success, response);
     			},
