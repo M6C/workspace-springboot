@@ -208,22 +208,22 @@ public class SrvTreeDirectory extends SrvGenerique {
 	                                }
                                 }
                             }
-
                         }
-                        if(jsonData != null)
-                            jsonData = (new StringBuilder(String.valueOf(jsonData))).append("]").toString();
-                        else
-                            jsonData = "[]";
-                        OutputStream os = response.getOutputStream();
-                        response.setContentType("text/json");
-                        os.write(jsonData.getBytes());
-                        os.close();
                     }
                 }
             }
         } catch(Exception ex) {
             Trace.ERROR(this, ex);
-        }
+        } finally {
+			if(jsonData != null)
+				jsonData = (new StringBuilder(String.valueOf(jsonData))).append("]").toString();
+			else
+				jsonData = "[]";
+			OutputStream os = response.getOutputStream();
+			response.setContentType("text/json");
+			os.write(jsonData.getBytes());
+			os.close();
+		}
         // Trace.DEBUG(this, (new StringBuilder("execute application:")).append(application).append(" path:").append(path).append(" pathFormated:").append(pathFormated).toString());
         // Trace.DEBUG(this, (new StringBuilder("execute pathMain:")).append(pathMain).append(" pathSrc:").append(pathSrc).toString());
         // Trace.DEBUG(this, (new StringBuilder("execute withContentType:")).append(withContentType).append(" noContentType:").append(noContentType).toString());
