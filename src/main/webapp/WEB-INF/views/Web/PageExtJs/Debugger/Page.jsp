@@ -10,28 +10,28 @@
 <html>
 <head>
   <title>Complex Layout</title>
-    <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/resources/css/ext-all.css" />
-    <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/resources/css/xtheme-gray.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/extjs/3.4.0/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/extjs/3.4.0/resources/css/xtheme-gray.css" />
     
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/menu/MenuHeader.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/pageextjs/debugger/styles.css"/>
 
     <!-- GC -->
     <!-- LIBS -->
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="/webjars/extjs/3.4.0/adapter/ext/ext-base.js"></script>
     <!-- ENDLIBS -->
 
-    <%--script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/ext-all.js"></script--%>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/ext-all-debug.js"></script>
+    <%--script type="text/javascript" src="/webjars/extjs/3.4.0/ext-all.js"></script--%>
+    <script type="text/javascript" src="/webjars/extjs/3.4.0/ext-all-debug.js"></script>
 
     <!--script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/editorjava/ComboProjet.js"></script-->
     <!--script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/editorjava/TreeDirectory.js"></script-->
 
 	<!-- ExtJs Librairies (Use for : Window)  -->
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/src/util/MixedCollection.js"></script>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/examples/ux/statusbar/StatusBar.js"></script>
-	<script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/examples/ux/statusbar/ValidationStatus.js"></script>
-	<script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/examples/ux/fileuploadfield/FileUploadField.js"></script>
+    <script type="text/javascript" src="/webjars/extjs/3.4.0/src/util/MixedCollection.js"></script>
+    <script type="text/javascript" src="/webjars/extjs/3.4.0/examples/ux/statusbar/StatusBar.js"></script>
+	<script type="text/javascript" src="/webjars/extjs/3.4.0/examples/ux/statusbar/ValidationStatus.js"></script>
+	<script type="text/javascript" src="/webjars/extjs/3.4.0/examples/ux/fileuploadfield/FileUploadField.js"></script>
 
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/constant/Constant.js"></script>
 	<script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/view/ViewPort.js"></script>
@@ -54,7 +54,7 @@
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/debugger/page.js"></script>
 
 	<script type="text/javascript">
-		Ext.BLANK_IMAGE_URL = '<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-3.4.0/resources/images/default/s.gif';
+		Ext.BLANK_IMAGE_URL = '/webjars/extjs/3.4.0/resources/images/default/s.gif';
 	
 		Ext.onReady(function() {
     		init_page();

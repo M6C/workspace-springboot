@@ -3,7 +3,7 @@ function init_page() {
 	Ext.Loader.setPath('Workspace.filebrowser', DOMAIN_NAME_ROOT + '/js/pageextjs/filebrowser');
 	Ext.Loader.setPath('Workspace.editorjava', DOMAIN_NAME_ROOT + '/js/pageextjs/editorjava');
 
-	Ext.Loader.setPath('Ext.ux', DOMAIN_NAME_ROOT + '/jsFramework/ext-4.0.7/examples/ux');
+	Ext.Loader.setPath('Ext.ux', '/webjars/extjs/4.2.0/examples/ux');
 	Ext.Loader.setPath('Ext.ux.window.Notification', DOMAIN_NAME_ROOT + '/jsFramework/Notification/Notification.js');
 
 // DEPENDENCE

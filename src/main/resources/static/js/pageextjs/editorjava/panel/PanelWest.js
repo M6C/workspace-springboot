@@ -39,7 +39,7 @@ Ext.define('Workspace.editorjava.panel.PanelWest', {
 				        	xtype: 'editorjavaComboProject',
   						    id: 'comboProject'
 				        },
-  				        {	//Balise cach�e
+  				        {	//Balise cachee
   						    xtype: 'hidden',
   						    id: 'project',
   						    name: 'project'

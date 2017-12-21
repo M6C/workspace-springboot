@@ -23,9 +23,9 @@ function init_loader() {
 	Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
 	console.info('State Manager \'CookieProvider\' setted');
 
-	Ext.Loader.setPath('Ext', DOMAIN_NAME_ROOT + '/jsFramework/ext-4.0.7');
+	Ext.Loader.setPath('Ext', '/webjars/extjs/4.2.0');
 	console.info('common.ini.init_loader Ext.Loader \'Ext\' setted');
-	Ext.Loader.setPath('Ext.ux', DOMAIN_NAME_ROOT + '/jsFramework/ext-4.0.7/examples/ux');
+	Ext.Loader.setPath('Ext.ux', '/webjars/extjs/4.2.0/examples/ux');
 	console.info('common.ini.init_loader Ext.Loader \'Ext.ux\' setted');
 	Ext.Loader.setPath('Workspace.common', DOMAIN_NAME_ROOT + '/js/commonextjs');
 	console.info('common.ini.init_loader Ext.Loader \'Workspace.common\' setted');

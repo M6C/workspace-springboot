@@ -3,22 +3,21 @@
 <html>
 <head>
   <title>EditorJava</title>
-    <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/resources/css/ext-all-gray.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/extjs/4.2.0/resources/css/ext-all-gray.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/Notification.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/Console.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/menu/MenuHeader.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/pageextjs/editorjava/styles.css"/>
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/pageextjs/editorjava/styles_ace_editor.css"/>
 
-	<script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/bootstrap.js"></script>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/ext-all-debug-w-comments.js"></script>
+    <script type="text/javascript" src="/webjars/extjs/4.2.0/ext-all-debug-w-comments.js"></script><%-- ext-all.js --%>
 
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/constant/Constant.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/init/InitLoader.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/editorjava/page.js"></script>
 
 	<script type="text/javascript">
-		Ext.BLANK_IMAGE_URL = '<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/resources/themes/images/default/tree/s.gif';
+		Ext.BLANK_IMAGE_URL = '/webjars/extjs/4.2.0/resources/themes/images/default/tree/s.gif';
 	
 		function addScript(path) {
 			var script = document.createElement('script');
@@ -35,9 +34,9 @@
 
 	        init_loader();
 
-/* 			addScript('/jsFramework/ace-1.2.5/src-min-noconflict/ace.js');
+/* 			addScript('/webjars/ace/1.2.6/src-min-noconflict/ace.js');
 			// Use for 'ace/ext/language_tools' (Completion...)
-			addScript('/jsFramework/ace-1.2.5/src-min-noconflict/ext-language_tools.js');
+			addScript('/webjars/ace/1.2.6/src-min-noconflict/ext-language_tools.js');
  */
 	        addScript('/js/pageextjs/editorjava/window/WindowMenu.js');
 	        addScript('/js/pageextjs/editorjava/menu/MenuAction.js');
@@ -48,8 +47,12 @@
     		init_page();
 		});
 	</script>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ace-1.2.5/src-min-noconflict/ace.js"></script>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ace-1.2.5/src-min-noconflict/ext-language_tools.js"></script>
+<%--
+    <script type="text/javascript" src="/webjars/ace/1.2.6/src-min-noconflict/ace.js"></script>
+    <script type="text/javascript" src="/webjars/ace/1.2.6/src-min-noconflict/ext-language_tools.js"></script>
+--%>
+    <script type="text/javascript" src="/webjars/ace/1.2.6/src-noconflict/ace.js"></script>
+    <script type="text/javascript" src="/webjars/ace/1.2.6/src-noconflict/ext-language_tools.js"></script>
 </head>
 <body>
 	<div id="popup_log" class="x-hidden"><div id="popup_log_window"></div></div>

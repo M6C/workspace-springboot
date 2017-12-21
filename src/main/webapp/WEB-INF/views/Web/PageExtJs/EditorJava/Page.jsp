@@ -3,11 +3,11 @@
 <html>
 <head>
   <title>EditorJava</title>
-    <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/resources/css/ext-all-gray.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/extjs/4.2.0/resources/css/ext-all-gray.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/menu/MenuHeader.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/pageextjs/editorjava/styles.css"/>
 
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/ext-all-debug-w-comments.js"></script>
+    <script type="text/javascript" src="/webjars/extjs/4.2.0/ext-all-debug-w-comments.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/constant/Constant.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/init/InitLoader.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/editorjava/page.js"></script>
@@ -20,7 +20,7 @@
 	--%>
 
 	<script type="text/javascript">
-		Ext.BLANK_IMAGE_URL = '<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/resources/themes/images/default/tree/s.gif';
+		Ext.BLANK_IMAGE_URL = '/webjars/extjs/4.2.0/resources/themes/images/default/tree/s.gif';
 	
 		Ext.onReady(function() {
 			init_loader();

@@ -76,11 +76,13 @@ Ext.define('Workspace.editorjava.panel.PanelSouth', {
 
 		var mainCenterPanel=Ext.getCmp('mainCenterPanel');
 		var tab = mainCenterPanel.getActiveTab();
-		if (Ext.isDefined(tab) && Ext.isFunction(tab.doLayout)) {
+		if (Ext.isObject(tab) && Ext.isFunction(tab.doLayout)) {
 		    tab.doLayout();
 		}
 
-        var editor = ace.edit(tab.panelEditorId);//tab.getComponent(tab.panelEditorId);
-        editor.resize(true);
+		if (!Ext.isEmpty(tab)) {
+            var editor = ace.edit(tab.panelEditorId);//tab.getComponent(tab.panelEditorId);
+            editor.resize(true);
+		}
 	}
 }, function() {Workspace.tool.Log.defined('Workspace.editorjava.panel.PanelSouth');});

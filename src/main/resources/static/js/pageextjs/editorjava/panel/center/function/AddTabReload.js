@@ -9,8 +9,6 @@ Ext.define('Workspace.editorjava.panel.center.function.AddTabReload',  {
 		call : function(editor, callBackSuccess) {
 		    console.info('Workspace.editorjava.panel.center.function.AddTabReload.call');
 		    var me = this;
-			var mainCenterPanel=Ext.getCmp('mainCenterPanel');
-            var tab = mainCenterPanel.getActiveTab();
 
 // 			var callBackSuccess = function() {
 
@@ -21,10 +19,25 @@ Ext.define('Workspace.editorjava.panel.center.function.AddTabReload',  {
 // 			    Workspace.common.tool.Pop.info(me, 'Reload success');
 // 			}
 
-    		var loadRequest = Ext.create('Workspace.editorjava.request.JsonEditLoadFile', {
-    			panelId: tab.panelId,
-    			panelEditorId: tab.panelEditorId
-    		}).request(callBackSuccess);
+//            var option = {};
+//			var mainCenterPanel=Ext.getCmp('mainCenterPanel');
+//            var tab = mainCenterPanel.getActiveTab();
+//            if (Ext.isObject(tab)) {
+//                option = {
+//                    panelId: editor.panelId,
+//                    panelEditorId: editor.panelEditorId
+//                }
+//            } else {
+//                option = {
+//                    panelId: tab.panelId,
+//                    panelEditorId: tab.panelEditorId
+//                };
+//            }
+            var option = {
+                panelId: editor.panelId,
+                panelEditorId: editor.panelEditorId
+            };
+    		var loadRequest = Ext.create('Workspace.editorjava.request.JsonEditLoadFile', option).request(callBackSuccess);
 		}
 	}
 

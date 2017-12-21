@@ -1,7 +1,8 @@
 Ext.define('Workspace.editorjava.panel.center.function.AddTabAce',  {
 	requires: [ 
-	     'Workspace.editorjava.panel.center.function.AddTabSave',
-	     'Workspace.editorjava.panel.center.function.AddTabReload'
+        'Workspace.editorjava.panel.center.function.AddTabSave',
+        'Workspace.editorjava.panel.center.function.AddTabReload',
+        'Workspace.editorjava.panel.center.PanelCenterEditor'
 	]
 	,
 	statics: {

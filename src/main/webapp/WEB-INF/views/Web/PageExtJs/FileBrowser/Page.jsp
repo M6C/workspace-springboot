@@ -3,23 +3,23 @@
 <html>
 <head>
   <title>FileBrowser</title>
-    <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/resources/css/ext-all-gray.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/extjs/4.2.0/resources/css/ext-all-gray.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/Notification.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/menu/MenuHeader.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/pageextjs/filebrowser/styles.css"/>
 
-    <%--script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/ext-all-debug-w-comments.js"></script--%>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/ext-all-debug.js"></script>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ace-1.2.5/src-min-noconflict/ace.js"></script>
+    <%--script type="text/javascript" src="/webjars/extjs/4.2.0/ext-all-debug-w-comments.js"></script--%>
+    <script type="text/javascript" src="/webjars/extjs/4.2.0/ext-all-debug.js"></script>
+    <script type="text/javascript" src="/webjars/ace/1.2.6/src-min-noconflict/ace.js"></script>
 	<%--Use for 'ace/ext/language_tools' (Completion...)--%>
-    <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/jsFramework/ace-1.2.5/src-min-noconflict/ext-language_tools.js"></script>
+    <script type="text/javascript" src="/webjars/ace/1.2.6/src-min-noconflict/ext-language_tools.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/constant/Constant.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/init/InitLoader.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/filebrowser/page.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/filebrowser/window/WindowMenu.js"></script>
 
 	<script type="text/javascript">
-		Ext.BLANK_IMAGE_URL = '<%=DOMAIN_NAME_ROOT%>/jsFramework/ext-4.0.7/resources/themes/images/default/tree/s.gif';
+		Ext.BLANK_IMAGE_URL = '/webjars/extjs/4.2.0/resources/themes/images/default/tree/s.gif';
 	
 		Ext.onReady(function() {
 			init_loader();
