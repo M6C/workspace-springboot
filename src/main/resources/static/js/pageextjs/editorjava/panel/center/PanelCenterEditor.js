@@ -77,9 +77,10 @@ Ext.define('Workspace.editorjava.panel.center.PanelCenterEditor', {
 		        panel
 		    ],
 		    listeners : {
-		    	'show': function(tab, option) {
+		    	'afterlayout': function(tab, option) {
 
 		    		var editor = ace.edit(me.panelEditorId);
+//					editor.on('blur', function() {
 		    		Ext.apply(editor, {
 		    			id: me.panelEditorId,
 		    			panelId: me.panelId,
@@ -121,6 +122,7 @@ Ext.define('Workspace.editorjava.panel.center.PanelCenterEditor', {
 					} else {
 						me.callBackReloadSuccess(me);
 					}
+//					});
 		    	}
 				,
 				beforeclose: function(tab, option) {
