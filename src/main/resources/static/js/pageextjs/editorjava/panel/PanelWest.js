@@ -1,9 +1,8 @@
 Ext.define('Workspace.editorjava.panel.PanelWest', {
 	// REQUIRED
-	requires: ['Workspace.editorjava.form.combobox.ComboProject'
-	           ,
-	           'Workspace.editorjava.tree.TreeFileExplorer'
-	           ]
+	requires: [ 'Workspace.editorjava.form.combobox.ComboProject',
+                'Workspace.editorjava.tree.TreeFileExplorer'
+    ]
 	,
 	extend: 'Workspace.common.panel.PanelCollapsible'
 	,
@@ -12,13 +11,14 @@ Ext.define('Workspace.editorjava.panel.PanelWest', {
 	,
 	id: 'mainWestPanel',
 	region: 'west',
-	//bodyStyle: 'padding:5px;background-color:white;',
+//	bodyStyle: 'padding:5px;background-color:white;',
 	width: 200,
 	minSize: 200,
 	layout: 'border',
 	hideCollapseTool: true,
 	collapseMode: 'mini',
     stateful:true,
+    autoScroll:false,
     stateId:'Workspace.editorjava.panel.PanelWest'
     ,
 	// private
@@ -32,7 +32,9 @@ Ext.define('Workspace.editorjava.panel.PanelWest', {
 					layout:'fit',
 					collapsible: false,
 					split: false,
-					autoHeight: true
+					autoHeight: true,
+					autoWidth: true,
+					border: false
 					,
 					items: [
 				        {

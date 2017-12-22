@@ -3,6 +3,12 @@
 <html>
 <head>
   <title>EditorJava</title>
+<%--
+        <link  href="/webjars/extjs/6.2.0/build/modern/theme-neptune/resources/theme-neptune-all.css" rel="stylesheet" />
+        <script src="/webjars/extjs/6.2.0/build/ext-modern-all.js"></script>
+        <script src="/webjars/extjs/6.2.0/build/modern/theme-neptune/theme-neptune.js"></script>
+--%>
+
     <link rel="stylesheet" type="text/css" href="/webjars/extjs/4.2.0/resources/css/ext-all-gray.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/Notification.css" />
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/componentextjs/Console.css" />
@@ -11,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="<%=DOMAIN_NAME_ROOT%>/css/pageextjs/editorjava/styles_ace_editor.css"/>
 
     <script type="text/javascript" src="/webjars/extjs/4.2.0/ext-all-debug-w-comments.js"></script><%-- ext-all.js --%>
-
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/constant/Constant.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/commonextjs/init/InitLoader.js"></script>
     <script type="text/javascript" src="<%=DOMAIN_NAME_ROOT%>/js/pageextjs/editorjava/page.js"></script>
