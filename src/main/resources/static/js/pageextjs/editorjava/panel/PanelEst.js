@@ -10,6 +10,7 @@ Ext.define('Workspace.editorjava.panel.PanelEst', {
 	alternateClassName: 'PanelEst'
 	,
 	id: 'mainEstPanel',
+	title: 'mainEstPanel',
 	region: 'east',
 	layout: 'fit',
 	hideCollapseTool: true,

@@ -28,6 +28,7 @@ Ext.define('Workspace.common.window.WindowCombo', {
         var combo = Ext.create('Ext.form.field.ComboBox', {
             id: me.id + '-combo',
             typeAhead: true,
+            editable: true,
     		width:230,
             displayField: 'text',
             valueField: 'data',

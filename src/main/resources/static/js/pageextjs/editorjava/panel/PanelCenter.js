@@ -12,6 +12,8 @@ Ext.define('Workspace.editorjava.panel.PanelCenter', {
 	,
 	alias: 'widget.panelCenter',
 	alternateClassName: 'PanelCenter',
+	id: 'mainCenterPanel',
+	title: 'mainCenterPanel',
     stateful:false
     ,
     initComponent : function(){

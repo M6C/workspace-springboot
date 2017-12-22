@@ -12,7 +12,9 @@ Ext.define('Workspace.editorjava.form.combobox.ComboProject', {
 	alternateClassName: 'WorkspaceEditorJavaComboProject'
 	,
     enableKeyEvents: true,
-    editable: false
+    typeAhead: false,
+    editable: false,
+    selectOnFocus: false
  	,
 	// Overrided
 	onActionItem: function(cmb, newValue, oldValue, option) {

@@ -86,7 +86,7 @@ Ext.define('Workspace.widget.tree.WidgetTreeExplorer', {
 		me.onActionOpen(view, record, item, index, event, eOpts);
 	},
 	// Can be overrided
-	applyDragAndDrop: function(me) {
+	doApplyDragAndDrop: function(me) {
 		// Explicit load required library (Mandatory for extending this class)
 		Workspace.common.draganddrop.ApplyDragAndDropCopyMove.apply(me);
 	}

@@ -14,7 +14,7 @@ Ext.define('Workspace.common.form.combobox.data.StoreProjectExtjs4', {
        	reader : {
 			type: 'json',
 			idProperty: 'project',
-			root: 'data'
+			rootProperty: 'data'
 	    }
     }
 }, function() {Workspace.tool.Log.defined('Workspace.common.form.combobox.data.StoreProjectExtjs4');});

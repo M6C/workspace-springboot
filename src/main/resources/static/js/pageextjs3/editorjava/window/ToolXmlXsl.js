@@ -44,6 +44,8 @@ function create_WindowToolXmlXsl(windowEl,submitFunction) {
 //		triggerAction: 'all',
 //		emptyText:'Select a scope...',
 //		fieldLabel:'Scope',
+//      editable: true,
+//  	typeAhead: true,
 //		selectOnFocus:true
 //	});
 //

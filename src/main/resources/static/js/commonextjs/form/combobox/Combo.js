@@ -6,10 +6,11 @@ Workspace.form.ComboBox = Ext.extend(Ext.form.ComboBox, {
 //		this.id = comboId
 //	},
     //autoLoad: true,
-    typeAhead: true,
     mode: 'local',
     forceSelection: true,
     triggerAction: 'all',
+    typeAhead: true,
+    editable: true,
     selectOnFocus:true
 });
 

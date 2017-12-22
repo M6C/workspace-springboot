@@ -7,6 +7,7 @@ Ext.define('Workspace.editorjava.panel.PanelSouth', {
 	alternateClassName: 'PanelSouth'
 	,
 	id: 'mainSouthPanel',
+	title: 'mainSouthPanel',
 	region: 'south',
 	bodyStyle: 'padding:0px',
 //	layout: 'fit',

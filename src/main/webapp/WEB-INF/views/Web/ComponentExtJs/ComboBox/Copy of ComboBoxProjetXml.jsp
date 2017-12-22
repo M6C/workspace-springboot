@@ -31,11 +31,12 @@ Ext.onReady(function(){
         //url: '/Workspace/action.servlet?event=JsonProjectName',
         //autoLoad: true,
         displayField:'project',
-        typeAhead: true,
         mode: 'local',
         forceSelection: true,
         triggerAction: 'all',
         emptyText:'Select a project...',
+        typeAhead: true,
+        editable: true,
         selectOnFocus:true,
         applyTo: 'local-project'/*,
 		onSelect: function(record){ // override default onSelect to do redirect

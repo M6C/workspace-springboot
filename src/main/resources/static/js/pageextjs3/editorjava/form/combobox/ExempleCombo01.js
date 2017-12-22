@@ -10,7 +10,7 @@ var ficheDataStore = new Ext.data.Store({
     }),
     baseParams: { clientId: clientId, Type: 'Fiche' }, // this parameter asks for listing
     reader: new Ext.data.JsonReader({   // we tell the datastore where to get his data from
-        root: 'results'
+        rootProperty: 'results'
     }, [
 	    { name: 'GUID', type: 'string', mapping: 'GUID' },
 	    { name: 'TagClient', type: 'string', mapping: 'TagClient' },
@@ -28,7 +28,7 @@ var ficheDataStore = new Ext.data.Store({
 var communesDataStore = new Ext.data.Store({
     autoLoad: true,
     proxy: new Ext.data.HttpProxy({ url: 'ficheDetail.aspx?Type=Communes' }),
-    reader: new Ext.data.JsonReader({ root: 'results' }, [{ name: 'Compteur' }, { name: 'Localisation'}])
+    reader: new Ext.data.JsonReader({ rootProperty: 'results' }, [{ name: 'Compteur' }, { name: 'Localisation'}])
 });
 
 /**
@@ -63,6 +63,7 @@ var comb = new Ext.form.ComboBox({
 	  id: 'CompteurCommunes',
 	  width: 300,
 	  typeAhead: true,
+	  editable: true,
 	  mode: 'local',
 	  minChars: 0,
 	  selecOnFocus: true,

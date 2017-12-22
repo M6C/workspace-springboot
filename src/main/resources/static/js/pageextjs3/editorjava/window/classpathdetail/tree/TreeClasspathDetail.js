@@ -94,6 +94,8 @@ Ext.reg('WorkspaceTreeTreeClasspathDetail',Workspace.window.ClasspathDetail.tree
 //   var treeEditorDetail = new Ext.tree.TreeEditor(treeClasspathDetail, {/* fieldconfig here */ }, {
 //       allowBlank:false,
 //       blankText:'A project is required',
+//       typeAhead: true,
+//       editable: true,
 //       selectOnFocus:true
 //   });
 //

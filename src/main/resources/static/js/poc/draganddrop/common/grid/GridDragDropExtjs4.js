@@ -8,7 +8,7 @@ Ext.define('Workspace.poc.draganddrop.common.grid.GridDragDropExtjs4', {
 	initComponent : function(){
 		var me = this;
 		
-		me.applyDragAndDrop(me);
+		me.doApplyDragAndDrop(me);
 
 		Ext.apply(me, {
 		    listeners : {
@@ -23,7 +23,7 @@ Ext.define('Workspace.poc.draganddrop.common.grid.GridDragDropExtjs4', {
 	    me.callParent(arguments);
 	}
 	,
-	applyDragAndDrop: function(me) {
+	doApplyDragAndDrop: function(me) {
 		// Explicit load required library (Mandatory for extending this class)
 		Ext.Loader.syncRequire('Workspace.poc.draganddrop.common.function.ApplyDragAndDrop');
 		Workspace.poc.draganddrop.common.function.ApplyDragAndDrop.apply(me, me.onBeforeDrop, me.onDrop);

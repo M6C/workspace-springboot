@@ -28,8 +28,7 @@ Workspace.tree.TreeCompletion = Ext.extend(Ext.tree.TreePanel, {
 	        }
 	   }
 	}),
-    //root: root,
-    root: {
+     root: {
 	    //nodeType: 'async',
 	    text: 'root',//Ext.getCmp('project').value,
 	    draggable: false,
@@ -160,6 +159,8 @@ Ext.reg('WorkspaceTreeTreeCompletion',Workspace.tree.TreeCompletion);
 //   var treeEditorDetail = new Ext.tree.TreeEditor(treeCompletion, {/ fieldconfig here / }, {
 //       allowBlank:false,
 //       blankText:'A project is required',
+//       editable: true,
+//  	 typeAhead: true,
 //       selectOnFocus:true
 //   });
 //*/

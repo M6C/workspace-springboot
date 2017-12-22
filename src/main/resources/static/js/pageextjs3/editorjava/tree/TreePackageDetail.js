@@ -44,6 +44,8 @@ Workspace.tree.TreePackageDetail = Ext.extend(Ext.tree.TreePanel, {
 			new Ext.tree.TreeEditor(tree, {/* fieldconfig here */ }, {
 				allowBlank:false,
 				blankText:'A name is required',
+				editable: true,
+                typeAhead: true,
 				selectOnFocus:true
 			});
 			new Ext.tree.TreeSorter(tree, {folderSort:true});
@@ -103,6 +105,8 @@ Ext.reg('WorkspaceTreeTreePackageDetail',Workspace.tree.TreePackageDetail);
 //   var treeEditorDetail = new Ext.tree.TreeEditor(treePackageDetail, {/* fieldconfig here */ }, {
 //       allowBlank:false,
 //       blankText:'A name is required',
+//       editable: true,
+//    	 typeAhead: true,
 //       selectOnFocus:true
 //   });
 //

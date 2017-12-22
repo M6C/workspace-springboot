@@ -3,14 +3,16 @@ function init_page() {
 	Ext.Loader.setPath('Workspace.editorjava', DOMAIN_NAME_ROOT + '/js/pageextjs/editorjava');
 
 	Ext.Loader.setConfig({enabled: true, origine:DOMAIN_NAME_ROOT});
-	Ext.Loader.setPath('Ext.ux', '/webjars/extjs/4.2.0/examples/ux');
+//	Ext.Loader.setPath('Ext.ux', '/webjars/extjs/4.2.0/examples/ux');
+//	Ext.Loader.setPath('Ext.ux', '/webjars/extjs/6.2.0/build/examples/kitchensink/classic/samples');
 	Ext.Loader.setPath('Ext.ux.window.Notification', DOMAIN_NAME_ROOT + '/jsFramework/Notification/Notification.js');
 
 	Ext.require([
 	    'Ext.data.*',
 	    'Ext.grid.*',
-	    'Ext.util.*',
-	    'Ext.ux.ProgressBarPager'
+	    'Ext.util.*'
+//	    ,
+//	    'Ext.ux.ProgressBarPager' // 6.2.0:'KitchenSink.view.grid.ProgressBarPager'
 	]);
 
     var viewport = Ext.create('Workspace.editorjava.view.ViewMain', {
@@ -18,5 +20,5 @@ function init_page() {
     	id: 'mainView'
     });
 
-    Ext.QuickTips.init();
+//    Ext.QuickTips.init();
 }

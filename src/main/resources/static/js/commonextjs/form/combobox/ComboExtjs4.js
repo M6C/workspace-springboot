@@ -6,10 +6,11 @@ Ext.define('Workspace.common.form.combobox.ComboExtjs4', {
 	alias: 'widget.comboExtjs4',
 	alternateClassName: 'ComboExtjs4'
 	,
-    typeAhead: true,
     mode: 'local',
     forceSelection: true,
     triggerAction: 'all',
+    typeAhead: true,
+    editable: true,
     selectOnFocus:true
 
 }, function() {Workspace.tool.Log.defined('Workspace.common.form.combobox.ComboExtjs4');});

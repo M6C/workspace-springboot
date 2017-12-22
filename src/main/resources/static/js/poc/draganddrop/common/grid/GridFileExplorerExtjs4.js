@@ -5,7 +5,7 @@ Ext.define('Workspace.poc.draganddrop.common.grid.GridFileExplorerExtjs4', {
 	alias: 'widget.commonGridFileExplorer',
 	alternateClassName: 'WorkspaceCommonGridFileExplorer'
 	,
-	applyDragAndDrop: function(me) {
+	doApplyDragAndDrop: function(me) {
 		// Explicit load required library (Mandatory for extending this class)
 		Ext.Loader.syncRequire('Workspace.poc.draganddrop.function.ApplyDragAndDropCopyMove');
 		Workspace.poc.draganddrop.function.ApplyDragAndDropCopyMove.apply(me);

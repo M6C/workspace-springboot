@@ -11,7 +11,7 @@ Ext.define('Workspace.common.form.combobox.data.StorePackageExtjs4', {
        	reader : {
 			type: 'json',
 			idProperty: 'package',
-			root: 'data'
+			rootProperty: 'data'
 	    }
     },
     autoLoad: true

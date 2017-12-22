@@ -16,7 +16,7 @@ Ext.define('Workspace.filebrowser.tree.TreeDirectoryExplorer', {
 		Workspace.filebrowser.panel.center.function.AddTab.call(record.raw);
 	}
 	,
-	applyStore: function(me) {
+	doApplyStore: function(me) {
 		Ext.apply(me, {
 			store: Ext.create('Workspace.common.tree.data.StoreDirectoryExplorerExtjs4')
 	    });

@@ -1,10 +1,10 @@
 <%--
-Paramètres à definir pour utiliser ce composant
+Paramï¿½tres ï¿½ definir pour utiliser ce composant
   -- Obligatoires:
     * myID  : Login de l'utilisateur connectamp;eacute;
     * myPWD : Password de l'utilisateur connectamp;eacute;
   -- Optionnels
-    * paramOther : Autres paramètres à mettre dans les 'value' des options dans le changement de projets
+    * paramOther : Autres paramï¿½tres ï¿½ mettre dans les 'value' des options dans le changement de projets
 --%>
 <%@ taglib uri="Framework_Taglib_Html.tld" prefix="html" %>
 <%@ taglib uri="Framework_Taglib_Request.tld" prefix="request" %>
@@ -14,7 +14,7 @@ Paramètres à definir pour utiliser ce composant
 
 <script type="text/javascript"><!--
 Ext.onReady(function(){
-    Ext.QuickTips.init();
+//    Ext.QuickTips.init();
 	Ext.namespace('Ext.workspace.data');
 /*
 	Ext.workspace.data.project = [
@@ -36,7 +36,7 @@ Ext.onReady(function(){
 	    }),
 	    reader: new Ext.data.JsonReader({
 			idProperty: 'project',
-			root: 'data',
+			rootProperty: 'data',
 			fields: [
 						{ name: 'project', mapping: 'project' }
 			]
@@ -50,11 +50,12 @@ Ext.onReady(function(){
         //url: '/Workspace/action.servlet?event=JsonProjectName',
         //autoLoad: true,
         displayField:'project',
-        typeAhead: true,
         mode: 'local',
         forceSelection: true,
         triggerAction: 'all',
         emptyText:'Select a project...',
+        typeAhead: true,
+        editable: true,
         selectOnFocus:true,
         applyTo: 'local-project'
     });

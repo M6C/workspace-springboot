@@ -20,6 +20,8 @@ Workspace.window.ToolXmlXsl.form.ComboBoxToolXmlXsl = Ext.extend(Ext.form.ComboB
 	triggerAction: 'all',
 	emptyText:'Select a scope...',
 	fieldLabel:'Scope',
+	editable: true,
+	typeAhead: true,
 	selectOnFocus:true
 });
 

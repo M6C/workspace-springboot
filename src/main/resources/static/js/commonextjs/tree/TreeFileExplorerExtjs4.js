@@ -13,16 +13,16 @@ Ext.define('Workspace.common.tree.TreeFileExplorerExtjs4', {
     initComponent : function(){
 		var me = this;
 
-		me.applyStore(me);
+		me.doApplyStore(me);
 
-		me.applyDragAndDrop(me);
+		me.doApplyDragAndDrop(me);
 
         Workspace.tool.UtilComponent.addListener(me, 'render', me.listenerRender);
 
 		me.callParent(arguments);
 	}
 	,
-	applyStore: function(me) {
+	doApplyStore: function(me) {
 		Ext.apply(me, {
 			store: Ext.create('Workspace.common.tree.data.StoreFileExplorerExtjs4', {
 		    	sorters: [
@@ -62,7 +62,7 @@ Ext.define('Workspace.common.tree.TreeFileExplorerExtjs4', {
         tree.header.setVisible(false);
 	}
     ,
-	applyDragAndDrop: function(me) {
+	doApplyDragAndDrop: function(me) {
 		Workspace.common.draganddrop.ApplyDragAndDrop.apply(me, me.onBeforeDrop, me.onDrop);
 	}
 	,

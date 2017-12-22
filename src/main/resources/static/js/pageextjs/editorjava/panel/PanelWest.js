@@ -10,6 +10,7 @@ Ext.define('Workspace.editorjava.panel.PanelWest', {
 	alternateClassName: 'PanelWest'
 	,
 	id: 'mainWestPanel',
+	title: 'mainWestPanel',
 	region: 'west',
 //	bodyStyle: 'padding:5px;background-color:white;',
 	width: 200,

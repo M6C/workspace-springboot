@@ -96,7 +96,7 @@ Ext.define('Workspace.filebrowser.grid.GridFileExplorer', {
 		console.info('Workspace.widget.tree.TreeExplorer onActionDelete');
 		Workspace.common.tool.Delete.doRequest(view.getSelectionModel());
 	},
-	applyDragAndDrop: function(me) {
+	doApplyDragAndDrop: function(me) {
 		// Explicit load required library (Mandatory for extending this class)
 		Ext.Loader.syncRequire('Workspace.common.draganddrop.ApplyDragAndDropCopyMove');
 		Workspace.common.draganddrop.ApplyDragAndDropCopyMove.apply(me);

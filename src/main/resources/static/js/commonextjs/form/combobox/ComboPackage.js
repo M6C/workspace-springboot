@@ -47,7 +47,7 @@ Ext.reg('WorkspaceCommonFormComboboxComboPackage', Workspace.common.form.combobo
 //	    }),
 //	    reader: new Ext.data.JsonReader({
 //			idProperty: 'package',
-//			root: 'data',
+//			rootProperty: 'data',
 //			fields: [
 //						{ name: 'package', mapping: 'package' }
 //			]
@@ -60,11 +60,12 @@ Ext.reg('WorkspaceCommonFormComboboxComboPackage', Workspace.common.form.combobo
 //		    id:comboIdPackage,
 //        store: storePackage,
 //        displayField:'package',
-//        typeAhead: true,
 //        mode: 'local',
 //        forceSelection: true,
 //        triggerAction: 'all',
 //        emptyText:'Select a package...',
+//        typeAhead: true,
+//        editable: true,
 //        selectOnFocus:true
 //    });
 //

@@ -5,7 +5,7 @@ Ext.ns('Workspace.common.form.combobox.data');
 Workspace.common.form.combobox.data.StorePackage = Ext.extend(Ext.data.Store, {
     reader : new Ext.data.JsonReader({
 		idProperty: 'package',
-		root: 'data',
+		rootProperty: 'data',
 		fields: [
 					{ name: 'package', mapping: 'package' }
 		]

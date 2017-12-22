@@ -14,7 +14,7 @@ Workspace.common.form.combobox.ComboProject = Ext.extend(Workspace.form.ComboBox
 	    }),
 	    reader: new Ext.data.JsonReader({
 			idProperty: 'project',
-			root: 'data',
+			rootProperty: 'data',
 			fields: [
 				{ name: 'project', mapping: 'project' }
 			]
@@ -56,7 +56,7 @@ Ext.reg('WorkspaceCommonFormComboboxComboProject', Workspace.common.form.combobo
 //	    }),
 //	    reader: new Ext.data.JsonReader({
 //			idProperty: 'project',
-//			root: 'data',
+//			rootProperty: 'data',
 //			fields: [
 //						{ name: 'project', mapping: 'project' }
 //			]
@@ -71,11 +71,12 @@ Ext.reg('WorkspaceCommonFormComboboxComboProject', Workspace.common.form.combobo
 //        //url: ACTION_SERVLET_ROOT + '/action.servlet?event=JsonProjectName',
 //        //autoLoad: true,
 //        displayField:'project',
-//        typeAhead: true,
 //        mode: 'local',
 //        forceSelection: true,
 //        triggerAction: 'all',
 //        emptyText:'Select a project...',
+//        typeAhead: true,
+//        editable: true,
 //        selectOnFocus:true
 //    });
 //
