@@ -22,21 +22,25 @@ Ext.define('Workspace.editorjava.view.ViewMain', {
   			}
     		,
 			{
+	            region: 'west',
 				xtype: 'panelWest',
 				items: []
 			}
     		,
 			{
+	            region: 'center',
 				xtype: 'panelCenter',
 	  			items: []
 			}
     		,
 			{
+	            region: 'est',
 				xtype: 'panelEst',
 				items: []
 			}
     		,
 			{
+	            region: 'south',
 				xtype: 'panelSouth',
 				items: []
 			}

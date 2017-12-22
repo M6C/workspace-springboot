@@ -27,44 +27,36 @@ Ext.define('Workspace.editorjava.panel.PanelWest', {
 		var me = this;
 		Ext.apply(me, {
             items : [
-				{
+                {
 					region: 'north',
-					xtype: 'panel',
 					layout:'fit',
+                    xtype: 'editorjavaComboProject',
+                    id: 'comboProject',
 					collapsible: false,
 					split: false,
 					autoHeight: true,
 					autoWidth: true,
 					border: false
-					,
-					items: [
-				        {
-				        	xtype: 'editorjavaComboProject',
-  						    id: 'comboProject'
-				        },
-  				        {	//Balise cachee
-  						    xtype: 'hidden',
-  						    id: 'project',
-  						    name: 'project'
-  						}
-					]
-				}
+                }
 				,
 				{
 					region: 'center',
-					xtype: 'panel',
+                    xtype:'editorjavaTreeFileExplorer',
+                    id : 'treeDirectory',
 					layout : 'fit',
 					collapsible: false,
 					split: false,
 					autoHeight: true,
 					autoWidth: true,
 					border: false
-					,
-  					items: [{
-  						xtype:'editorjavaTreeFileExplorer',
-  						id : 'treeDirectory'
-  					}]
 				}
+				,
+                {	//Balise cachee
+					region: 'south',
+                    xtype: 'hidden',
+                    id: 'project',
+                    name: 'project'
+                }
             ]
         });
 	    me.callParent(arguments);
