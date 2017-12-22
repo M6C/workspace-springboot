@@ -75,54 +75,60 @@ Ext.define('Workspace.editorjava.panel.center.PanelCenterEditor', {
 		    ,
 		    items: [
 		        panel
-		    ],
+		    ]
+		    ,
 		    listeners : {
-		    	'afterlayout': function(tab, option) {
+		    	afterlayout: function(tab, layout, option) {
+		            console.debug('Workspace.editorjava.panel.center.PanelCenterEditor afterlayout');
 
-		    		var editor = ace.edit(me.panelEditorId);
-//					editor.on('blur', function() {
-		    		Ext.apply(editor, {
-		    			id: me.panelEditorId,
-		    			panelId: me.panelId,
-		    			panelEditorId: me.panelEditorId,
-		    			application: me.application,
-		    			build: me.build,
-		    			autoDeploy: me.autoDeploy,
-		    			stateful:false,
-		    			raw: me.raw
-		    		});
-		    		
 		    		if (!me.initialized) {
+                        var editor = ace.edit(me.panelEditorId);
+                        Ext.apply(editor, {
+                            id: me.panelEditorId,
+                            panelId: me.panelId,
+                            panelEditorId: me.panelEditorId,
+                            application: me.application,
+                            build: me.build,
+                            autoDeploy: me.autoDeploy,
+                            stateful:false,
+                            raw: me.raw
+                        });
+
 						Ext.Loader.syncRequire('Workspace.editorjava.aceeditor.command.CommandSave');
 					    Workspace.editorjava.aceeditor.command.CommandSave.addCommand(editor);
-	
+
 						Ext.Loader.syncRequire('Workspace.editorjava.aceeditor.command.CommandSaveAll');
 					    Workspace.editorjava.aceeditor.command.CommandSaveAll.addCommand(editor);
-	
+
 					    Ext.Loader.syncRequire('Workspace.editorjava.aceeditor.command.CommandCompletion');
 					    Workspace.editorjava.aceeditor.command.CommandCompletion.addCommand(editor);
-	
+
 						Ext.Loader.syncRequire('Workspace.editorjava.aceeditor.command.CommandOptimizeImport');
 					    Workspace.editorjava.aceeditor.command.CommandOptimizeImport.addCommand(editor);
-	
+
 						Ext.Loader.syncRequire('Workspace.editorjava.aceeditor.command.CommandImport');
 					    Workspace.editorjava.aceeditor.command.CommandImport.addCommand(editor);
-	
+
 						Ext.Loader.syncRequire('Workspace.editorjava.aceeditor.command.CommandCloseTab');
 					    Workspace.editorjava.aceeditor.command.CommandCloseTab.addCommand(editor);
-	
+
 	                    if (Ext.isDefined(me.tab) && Ext.isDefined(editor.raw)) {
 	    		            me.tab.setTooltip('encoding:' + editor.raw.encoding);
 	                    }
+
+                        me.reload();
+
 		    			me.initialized = true;
 		    		}
-
+		    	}
+				,
+				'show': function(tab, option) {
+		    		var editor = ace.edit(me.panelEditorId);
 					if (!editor.dirty) {
 						me.reload();
 					} else {
 						me.callBackReloadSuccess(me);
 					}
-//					});
 		    	}
 				,
 				beforeclose: function(tab, option) {
